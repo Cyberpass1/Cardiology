@@ -250,7 +250,7 @@ catch (Exception ex){
         bg.add(loginBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 420, 130, 40));
 
         jLabel6.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel6.setFont(new java.awt.Font("Agency FB", 1, 18)); // NOI18N
+        jLabel6.setFont(new java.awt.Font("Arial Narrow", 1, 18)); // NOI18N
         jLabel6.setText("¿Olvidaste la contraseña?");
         jLabel6.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jLabel6.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -258,7 +258,7 @@ catch (Exception ex){
                 jLabel6MouseClicked(evt);
             }
         });
-        bg.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 360, -1, -1));
+        bg.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 360, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);

@@ -18,7 +18,7 @@ public class EnlaceBd {
  public  static Connection getConnection()
  {
    try{       
-  Class.forName("com.mysql.jdbc.Driver");
+  Class.forName("com.mysql.cj.jdbc.Driver");
 //con=DriverManager.getConnection("jdbc:mysql://localhost:3306/fundaginebrabd","root","elefante1999");
 // con=DriverManager.getConnection("jdbc:mysql://192.168.0.69:3306/fundaginebrabd","BasedatosJC","1234");
 //con=DriverManager.getConnection("jdbc:mysql://192.168.0.47:3306/fundaginebrabd","DBfundaginbra","1234");

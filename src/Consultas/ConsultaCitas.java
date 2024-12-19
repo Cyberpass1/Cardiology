@@ -124,6 +124,7 @@ visualizar_PdfVOHistorias(jTableVisualizarC, fecha, fecha2 );
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
 
+        sendEmail.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/correo-electronico.png"))); // NOI18N
         sendEmail.setText("Enviar por correo");
         sendEmail.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -132,6 +133,7 @@ visualizar_PdfVOHistorias(jTableVisualizarC, fecha, fecha2 );
         });
         Popus.add(sendEmail);
 
+        checkHistory.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/comprobacion.png"))); // NOI18N
         checkHistory.setText("Utilizar esta historia clinica");
         checkHistory.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -152,14 +154,14 @@ visualizar_PdfVOHistorias(jTableVisualizarC, fecha, fecha2 );
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1284, Short.MAX_VALUE)
+            .addGap(0, 1300, Short.MAX_VALUE)
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 30, Short.MAX_VALUE)
         );
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 643, -1, 30));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 643, 1300, 30));
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
         jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -207,7 +209,7 @@ visualizar_PdfVOHistorias(jTableVisualizarC, fecha, fecha2 );
         });
         jPanel2.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1190, 10, 70, 50));
 
-        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 30, 1300, 80));
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 1300, 80));
 
         jTableVisualizarC.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -243,7 +245,7 @@ visualizar_PdfVOHistorias(jTableVisualizarC, fecha, fecha2 );
             jTableVisualizarC.getColumnModel().getColumn(6).setResizable(false);
         }
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 130, 1270, 490));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(2, 130, 1280, 500));
 
         jPanel3.setBackground(new java.awt.Color(0, 0, 51));
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -251,19 +253,19 @@ visualizar_PdfVOHistorias(jTableVisualizarC, fecha, fecha2 );
         jLabel1.setFont(new java.awt.Font("Arial Narrow", 1, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Exportar Tabla");
-        jPanel3.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1150, 10, -1, -1));
+        jPanel3.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1160, 10, -1, -1));
 
         jLabel2.setFont(new java.awt.Font("Arial Narrow", 1, 24)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("C O N S U L T A S          M É D I C A S");
-        jPanel3.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 0, -1, -1));
+        jPanel3.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 10, -1, -1));
 
         jLabel3.setFont(new java.awt.Font("Arial Narrow", 1, 18)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Buscar por cédula:");
-        jPanel3.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
+        jPanel3.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, -1, -1));
 
-        getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1290, 30));
+        getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1290, 50));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

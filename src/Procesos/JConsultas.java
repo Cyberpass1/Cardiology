@@ -47,7 +47,10 @@ import com.itextpdf.text.pdf.PdfPageEventHelper;
 import com.itextpdf.text.pdf.PdfWriter;
 import java.awt.Desktop;
 import java.awt.Image;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
+import java.awt.event.MouseEvent;
 import java.io.ByteArrayInputStream;
 import java.io.File;
 import java.io.FileInputStream;
@@ -88,8 +91,11 @@ import javax.mail.internet.MimeMessage;
 import javax.mail.internet.MimeMultipart;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
+import javax.swing.JMenuItem;
 import javax.swing.JOptionPane;
+import javax.swing.JPopupMenu;
 import javax.swing.JTable;
+import javax.swing.JTextArea;
 import javax.swing.SwingConstants;
 import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
@@ -260,7 +266,7 @@ public class JConsultas extends javax.swing.JInternalFrame {
         jLabel23 = new javax.swing.JLabel();
         jComboBox18 = new javax.swing.JComboBox<>();
         jComboBox19 = new javax.swing.JComboBox<>();
-        jComboBox20 = new javax.swing.JComboBox<>();
+        jComboHabitos = new javax.swing.JComboBox<>();
         jSeparator1 = new javax.swing.JSeparator();
         jSeparator5 = new javax.swing.JSeparator();
         jSeparator6 = new javax.swing.JSeparator();
@@ -272,13 +278,13 @@ public class JConsultas extends javax.swing.JInternalFrame {
         jTConsumoDrugs = new javax.swing.JTextArea();
         jLabel34 = new javax.swing.JLabel();
         jLabel35 = new javax.swing.JLabel();
-        jComboBox4 = new javax.swing.JComboBox<>();
+        jSexualidad = new javax.swing.JComboBox<>();
         jLabel36 = new javax.swing.JLabel();
         jLabel37 = new javax.swing.JLabel();
         jLabel38 = new javax.swing.JLabel();
-        jComboBox7 = new javax.swing.JComboBox<>();
-        jComboBox8 = new javax.swing.JComboBox<>();
-        jComboBox9 = new javax.swing.JComboBox<>();
+        jActividadF = new javax.swing.JComboBox<>();
+        Fsemanal = new javax.swing.JComboBox<>();
+        jSueno = new javax.swing.JComboBox<>();
         jScrollPane15 = new javax.swing.JScrollPane();
         jTConsumoAlcohol = new javax.swing.JTextArea();
         jScrollPane16 = new javax.swing.JScrollPane();
@@ -443,15 +449,26 @@ public class JConsultas extends javax.swing.JInternalFrame {
         TXTsistolica = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         jSeparator10 = new javax.swing.JSeparator();
+        jPanel4 = new javax.swing.JPanel();
+        jTextExamenAdic = new javax.swing.JTextField();
+        jScrollPane31 = new javax.swing.JScrollPane();
+        jTextObservAdic = new javax.swing.JTextArea();
+        jButton21 = new javax.swing.JButton();
+        jAdcModif = new javax.swing.JButton();
+        jAdcDelete = new javax.swing.JButton();
+        jButton18 = new javax.swing.JButton();
+        jScrollPane25 = new javax.swing.JScrollPane();
+        jTableAdic = new javax.swing.JTable();
         jPanel10 = new javax.swing.JPanel();
         BtnImprimirHistoria = new javax.swing.JButton();
-        jComboBox2 = new javax.swing.JComboBox<>();
+        jConclusion = new javax.swing.JComboBox<>();
         jScrollPane5 = new javax.swing.JScrollPane();
         jTextRecomendacion = new javax.swing.JTextArea();
         jScrollPane8 = new javax.swing.JScrollPane();
         jTextConclusion = new javax.swing.JTextArea();
         BtnGuardar = new javax.swing.JButton();
         BtnImprimirHistoria2 = new javax.swing.JButton();
+        BtnGuardar1 = new javax.swing.JButton();
         JPanelAnteriores = new javax.swing.JPanel();
         jScrollPane6 = new javax.swing.JScrollPane();
         jTableVisualizarC = new javax.swing.JTable();
@@ -467,7 +484,6 @@ public class JConsultas extends javax.swing.JInternalFrame {
         JTabbedPacientes = new javax.swing.JTabbedPane();
         jPanel13 = new javax.swing.JPanel();
         TXTPnombre = new javax.swing.JTextField();
-        TXTPcorreo = new javax.swing.JTextField();
         TXTPtelefono = new javax.swing.JFormattedTextField();
         TXTPapellido = new javax.swing.JTextField();
         jPanel5 = new javax.swing.JPanel();
@@ -480,7 +496,9 @@ public class JConsultas extends javax.swing.JInternalFrame {
         BtnAgregar = new javax.swing.JButton();
         BtnCancelar = new javax.swing.JButton();
         jSeparator12 = new javax.swing.JSeparator();
+        TXTPcorreo = new javax.swing.JTextField();
 
+        jcorreo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/correo-electronico.png"))); // NOI18N
         jcorreo.setText("Enviar al correo");
         jcorreo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -722,7 +740,7 @@ public class JConsultas extends javax.swing.JInternalFrame {
 
         jPanel6.add(jTabbedPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 190, 920, 390));
 
-        jTabbedPane2.addTab("    | Motivo & Antecedentes |", jPanel6);
+        jTabbedPane2.addTab("Motivo & Antecedentes |", jPanel6);
 
         FactorRiesgo.setBackground(new java.awt.Color(255, 255, 255));
         FactorRiesgo.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -1264,9 +1282,9 @@ public class JConsultas extends javax.swing.JInternalFrame {
 
         jPanel16.add(jPanel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 340, 880, 160));
 
-        jComboBox20.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
-        jComboBox20.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Practica deportes", "Lectura", "Montañismo", "Gimnasio", "Fiestas", "Baile", "Televisión", "Juegos de computadora", "Juegos de azar", "Ninguno de los anteriores" }));
-        jPanel16.add(jComboBox20, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, 130, 30));
+        jComboHabitos.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
+        jComboHabitos.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "N/R", "Practica deportes", "Lectura", "Montañismo", "Gimnasio", "Fiestas", "Baile", "Televisión", "Juegos de computadora", "Juegos de azar", "Ninguno de los anteriores" }));
+        jPanel16.add(jComboHabitos, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, 130, 30));
         jPanel16.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 120, 900, 10));
 
         jSeparator5.setOrientation(javax.swing.SwingConstants.VERTICAL);
@@ -1301,9 +1319,9 @@ public class JConsultas extends javax.swing.JInternalFrame {
         jLabel35.setText("Actividad Física");
         jPanel16.add(jLabel35, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 130, 100, 20));
 
-        jComboBox4.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
-        jComboBox4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Satisfactoria", "Insatisfactoria", "Dispaurenia/relación dolorosa", "Inapetencia/frigidez", "Urgencia sexual/ninfomania", "Abstinencia voluntaria", "Bisexualidad", "Homosexualidad", "Impotencia", "Eyaculación precoz" }));
-        jPanel16.add(jComboBox4, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 160, 190, 30));
+        jSexualidad.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
+        jSexualidad.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "N/R", "Satisfactoria", "Insatisfactoria", "Dispaurenia/relación dolorosa", "Inapetencia/frigidez", "Urgencia sexual/ninfomania", "Abstinencia voluntaria", "Bisexualidad", "Homosexualidad", "Impotencia", "Eyaculación precoz" }));
+        jPanel16.add(jSexualidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 160, 190, 30));
 
         jLabel36.setText("Frecuencia semanal");
         jPanel16.add(jLabel36, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 130, 160, 20));
@@ -1314,17 +1332,17 @@ public class JConsultas extends javax.swing.JInternalFrame {
         jLabel38.setText("Hábitos Sociales");
         jPanel16.add(jLabel38, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 100, 20));
 
-        jComboBox7.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
-        jComboBox7.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Sedentario", "Aeróbicos", "Anaeróbicos  y aeróbicos", "Deportes", "Aeróbicos, anaeróbicos y deportes" }));
-        jPanel16.add(jComboBox7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 160, 190, 30));
+        jActividadF.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
+        jActividadF.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "N/R", "Sedentario", "Aeróbicos", "Anaeróbicos  y aeróbicos", "Deportes", "Aeróbicos, anaeróbicos y deportes" }));
+        jPanel16.add(jActividadF, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 160, 190, 30));
 
-        jComboBox8.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
-        jComboBox8.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Nunca", "Una vez", "Dos veces", "Tres veces", "Cuatro veces", "Cinco veces", "Seis veces", "Diariamente" }));
-        jPanel16.add(jComboBox8, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 160, 190, 30));
+        Fsemanal.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
+        Fsemanal.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "N/R", "Nunca", "Una vez", "Dos veces", "Tres veces", "Cuatro veces", "Cinco veces", "Seis veces", "Diariamente" }));
+        jPanel16.add(Fsemanal, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 160, 190, 30));
 
-        jComboBox9.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
-        jComboBox9.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Reparador", "Interrumpido", "Insomnio", "Pesadillas" }));
-        jPanel16.add(jComboBox9, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 160, 190, 30));
+        jSueno.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
+        jSueno.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "N/R", "Reparador", "Interrumpido", "Insomnio", "Pesadillas" }));
+        jPanel16.add(jSueno, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 160, 190, 30));
 
         jTConsumoAlcohol.setColumns(20);
         jTConsumoAlcohol.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
@@ -1452,7 +1470,7 @@ public class JConsultas extends javax.swing.JInternalFrame {
 
         jPanel7.add(jPanel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 200, 900, 130));
 
-        jTabbedPane2.addTab("Revisión Funcional |", jPanel7);
+        jTabbedPane2.addTab("Revisión |", jPanel7);
 
         jPanel8.setBackground(new java.awt.Color(255, 255, 255));
         jPanel8.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -1972,7 +1990,7 @@ public class JConsultas extends javax.swing.JInternalFrame {
         }
         Laboratorio.add(fecha2, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 340, 180, 40));
 
-        jTabbedPane2.addTab("Laboratorio", Laboratorio);
+        jTabbedPane2.addTab("Laboratorio |", Laboratorio);
 
         Rayosx.setBackground(new java.awt.Color(255, 255, 255));
         Rayosx.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -2133,7 +2151,104 @@ public class JConsultas extends javax.swing.JInternalFrame {
         Rayosx.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, -1, -1));
         Rayosx.add(jSeparator10, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 152, 880, 10));
 
-        jTabbedPane2.addTab("Estudios", Rayosx);
+        jTabbedPane2.addTab("Estudios |", Rayosx);
+
+        jPanel4.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jTextExamenAdic.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "Examen"));
+        jPanel4.add(jTextExamenAdic, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, 760, 40));
+
+        jScrollPane31.setBackground(new java.awt.Color(255, 255, 255));
+        jScrollPane31.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "Informe / Interpretación"));
+
+        jTextObservAdic.setColumns(20);
+        jTextObservAdic.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
+        jTextObservAdic.setLineWrap(true);
+        jTextObservAdic.setRows(5);
+        jTextObservAdic.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                jTextObservAdicMousePressed(evt);
+            }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                jTextObservAdicMouseReleased(evt);
+            }
+        });
+        jTextObservAdic.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                jTextObservAdicKeyReleased(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jTextObservAdicKeyTyped(evt);
+            }
+        });
+        jScrollPane31.setViewportView(jTextObservAdic);
+
+        jPanel4.add(jScrollPane31, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, 760, 150));
+
+        jButton21.setText("Agregar");
+        jButton21.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jButton21.setContentAreaFilled(false);
+        jButton21.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton21ActionPerformed(evt);
+            }
+        });
+        jPanel4.add(jButton21, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 30, 70, 40));
+
+        jAdcModif.setText("Modificar");
+        jAdcModif.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jAdcModif.setContentAreaFilled(false);
+        jAdcModif.setEnabled(false);
+        jAdcModif.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jAdcModifActionPerformed(evt);
+            }
+        });
+        jPanel4.add(jAdcModif, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 80, 70, 40));
+
+        jAdcDelete.setText("Retirar");
+        jAdcDelete.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jAdcDelete.setContentAreaFilled(false);
+        jAdcDelete.setEnabled(false);
+        jAdcDelete.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jAdcDeleteActionPerformed(evt);
+            }
+        });
+        jPanel4.add(jAdcDelete, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 130, 70, 40));
+
+        jButton18.setText("Cancelar");
+        jButton18.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jButton18.setContentAreaFilled(false);
+        jButton18.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton18ActionPerformed(evt);
+            }
+        });
+        jPanel4.add(jButton18, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 180, 70, 40));
+
+        jTableAdic.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "ID", "Examen", "Descripción"
+            }
+        ));
+        jTableAdic.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTableAdicMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jTableAdicMouseEntered(evt);
+            }
+        });
+        jScrollPane25.setViewportView(jTableAdic);
+
+        jPanel4.add(jScrollPane25, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 250, 860, 310));
+
+        jTabbedPane2.addTab("Complementario |", jPanel4);
 
         jPanel10.setBackground(new java.awt.Color(255, 255, 255));
         jPanel10.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -2149,10 +2264,10 @@ public class JConsultas extends javax.swing.JInternalFrame {
         });
         jPanel10.add(BtnImprimirHistoria, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 530, 150, 40));
 
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Buenas condiciones de salud", "Buenas condiciones de salud con recomendaciones médicas", "Elegible con recomenciones / restricciones", "Elegible con recomendaciones médicas", "Elegible para el cargo propuesto", "Se encuentra en buenas condiciones de salud para su egreso", "Espera por resultados de examenes paraclínicos", "No elegible para el cargo propuesto", "No se encuentra en buenas condiciones de salud", "Se encuentra en buenas condiciones de salud para el reintegro", "Reintegro con recomendaciones / restricciones médicas", "Diferido", "Sano sin hábitos", "Sano con hábitos", "En riesgo", "Enfermo erradicable", "Enfermo controlable", "Con secuelas" }));
-        jComboBox2.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "Indicador cualitativo de salud (resultado)")));
-        jComboBox2.setOpaque(false);
-        jPanel10.add(jComboBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 850, 50));
+        jConclusion.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar", "Buenas condiciones de salud", "Buenas condiciones de salud con recomendaciones médicas", "Elegible con recomenciones / restricciones", "Elegible con recomendaciones médicas", "Elegible para el cargo propuesto", "Se encuentra en buenas condiciones de salud para su egreso", "Espera por resultados de examenes paraclínicos", "No elegible para el cargo propuesto", "No se encuentra en buenas condiciones de salud", "Se encuentra en buenas condiciones de salud para el reintegro", "Reintegro con recomendaciones / restricciones médicas", "Diferido", "Sano sin hábitos", "Sano con hábitos", "En riesgo", "Enfermo erradicable", "Enfermo controlable", "Con secuelas" }));
+        jConclusion.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "Indicador cualitativo de salud (resultado)")));
+        jConclusion.setOpaque(false);
+        jPanel10.add(jConclusion, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 850, 50));
 
         jTextRecomendacion.setColumns(20);
         jTextRecomendacion.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
@@ -2191,6 +2306,16 @@ public class JConsultas extends javax.swing.JInternalFrame {
             }
         });
         jPanel10.add(BtnImprimirHistoria2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 520, 110, 40));
+
+        BtnGuardar1.setText("Vista Previa");
+        BtnGuardar1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        BtnGuardar1.setContentAreaFilled(false);
+        BtnGuardar1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnGuardar1ActionPerformed(evt);
+            }
+        });
+        jPanel10.add(BtnGuardar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 530, 140, 40));
 
         jTabbedPane2.addTab("Conclusión |", jPanel10);
 
@@ -2240,7 +2365,7 @@ public class JConsultas extends javax.swing.JInternalFrame {
 
         FechaAc4.setBackground(new java.awt.Color(0, 0, 0));
         FechaAc4.setFont(new java.awt.Font("Arial Narrow", 1, 18)); // NOI18N
-        FechaAc4.setText("             B U S C A R   P A C I E N T E");
+        FechaAc4.setText("             B U S C A R        P A C I E N T E");
         jPanel2.add(FechaAc4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 330, 30));
         jPanel2.add(jSeparator9, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, 370, 10));
 
@@ -2254,9 +2379,9 @@ public class JConsultas extends javax.swing.JInternalFrame {
                 TXTPcedulaKeyTyped(evt);
             }
         });
-        jPanel2.add(TXTPcedula, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, 210, 50));
+        jPanel2.add(TXTPcedula, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, 220, 50));
 
-        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 330, 110));
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 330, 100));
 
         JPregistro.setBackground(new java.awt.Color(255, 255, 255));
         JPregistro.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -2269,7 +2394,7 @@ public class JConsultas extends javax.swing.JInternalFrame {
         FechaAc5.setBackground(new java.awt.Color(0, 0, 0));
         FechaAc5.setFont(new java.awt.Font("Arial Narrow", 0, 18)); // NOI18N
         FechaAc5.setText("                           P A C I E N T E ");
-        jPanel22.add(FechaAc5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 330, 20));
+        jPanel22.add(FechaAc5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 330, 30));
 
         JPregistro.add(jPanel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 330, -1));
 
@@ -2285,16 +2410,6 @@ public class JConsultas extends javax.swing.JInternalFrame {
             }
         });
         jPanel13.add(TXTPnombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 150, 50));
-
-        TXTPcorreo.setEditable(false);
-        TXTPcorreo.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0))), "Correo"));
-        TXTPcorreo.setOpaque(false);
-        TXTPcorreo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                TXTPcorreoActionPerformed(evt);
-            }
-        });
-        jPanel13.add(TXTPcorreo, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, 150, 50));
 
         TXTPtelefono.setEditable(false);
         TXTPtelefono.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "Telefono"));
@@ -2387,6 +2502,16 @@ public class JConsultas extends javax.swing.JInternalFrame {
         jPanel13.add(BtnCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 410, 120, 40));
         jPanel13.add(jSeparator12, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 400, 320, 20));
 
+        TXTPcorreo.setEditable(false);
+        TXTPcorreo.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "Correo")));
+        TXTPcorreo.setOpaque(false);
+        TXTPcorreo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TXTPcorreoActionPerformed(evt);
+            }
+        });
+        jPanel13.add(TXTPcorreo, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, 150, 50));
+
         JTabbedPacientes.addTab("tab2", jPanel13);
 
         JPregistro.add(JTabbedPacientes, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 330, 500));
@@ -2470,7 +2595,7 @@ public class JConsultas extends javax.swing.JInternalFrame {
    
    
       BtnSearch.setEnabled(true);
-     
+         JOptionPane.showMessageDialog(null, "GENERANDO REPORTE...", "REPORTE CONSULTA", 1);
       }
       
       
@@ -2489,7 +2614,7 @@ public class JConsultas extends javax.swing.JInternalFrame {
        
        limpiarTVisualizar();
        visualizar_PdfVOHistorias(jTableVisualizarC);
-   
+    
      //BtnImprimirHistoria.setEnabled(false);
      BtnSearch.setEnabled(true);
       }
@@ -2992,7 +3117,7 @@ JButton boton;
        idAsignar=idCallestudios;
        ActualizarHistoriaBd();
    
-      System.out.println("Estas entrando en guardado desde corregir");
+      //  System.out.println("Estas entrando en guardado desde corregir");
       // BtnSearch.setEnabled(true);
        
       }
@@ -3003,7 +3128,7 @@ JButton boton;
            ActualizarHistoriaBd();
            insertbdAntc1();
            insertbdAntc2();
-          setState.CompletarHistoria(106,  idAsignar);
+           setState.CompletarHistoria(106,  idAsignar);
 
            }
              
@@ -3071,10 +3196,6 @@ JButton boton;
     private void TXTPnombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TXTPnombreActionPerformed
 
     }//GEN-LAST:event_TXTPnombreActionPerformed
-
-    private void TXTPcorreoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TXTPcorreoActionPerformed
-
-    }//GEN-LAST:event_TXTPcorreoActionPerformed
 
     private void TXTPtelefonoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TXTPtelefonoActionPerformed
         // TODO add your handling code here:
@@ -3604,6 +3725,163 @@ cantidad=cantidad-1;
         }  }
         jTextAntPersonales.setText("");
     }//GEN-LAST:event_jButton27ActionPerformed
+
+    private void BtnGuardar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnGuardar1ActionPerformed
+       pdfHistorias();
+    }//GEN-LAST:event_BtnGuardar1ActionPerformed
+
+    private void jTextObservAdicMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTextObservAdicMousePressed
+        checkPopup(evt, jTextObservAdic);
+    }//GEN-LAST:event_jTextObservAdicMousePressed
+
+    private void jTextObservAdicMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTextObservAdicMouseReleased
+        checkPopup(evt, jTextObservAdic);
+    }//GEN-LAST:event_jTextObservAdicMouseReleased
+
+    private void jTextObservAdicKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextObservAdicKeyReleased
+        String text = jTextObservAdic.getText();
+        int maxLength = 3100;
+        if (text.length() > maxLength) {
+            JOptionPane.showMessageDialog(this, "Se ha alcanzado la longitud máxima permitida", "Advertencia", JOptionPane.WARNING_MESSAGE);
+            // Trunca el texto si lo deseas
+            jTextObservAdic.setText(text.substring(0, maxLength));
+        }
+    }//GEN-LAST:event_jTextObservAdicKeyReleased
+
+    private void jTextObservAdicKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextObservAdicKeyTyped
+        va.longitud(jTextObservAdic.getText(), 3100, evt);
+    }//GEN-LAST:event_jTextObservAdicKeyTyped
+
+    private void jButton21ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton21ActionPerformed
+
+        int row = jTableAdic.getRowCount();
+        Object[] content = new Object[row];
+        for (int i = 0; i < row; i++) {
+            content[i] = jTableAdic.getValueAt(i, 1);
+        }
+        Object value_to_find= jTextExamenAdic.getText();
+        boolean exist = Arrays.asList(content).contains(value_to_find);
+
+        if (exist){
+            JOptionPane.showMessageDialog(null, "NO PUEDEN HABER ENFERMEDADES DUPLICADAS", "INFORMACIÓN", JOptionPane.ERROR_MESSAGE);
+        }
+
+        else if (jTextExamenAdic.getText().equals("") || jTextObservAdic.getText().equals("") ){ JOptionPane.showMessageDialog(null, "DEBE COMPLETAR LOS CAMPOS", "INFORMACIÓN", JOptionPane.ERROR_MESSAGE);}
+
+     
+        else
+        {
+
+            if (estadoEstudio.equals("Pendiente")) {
+                AgregarExamenAdc();
+                limpiarEAdc();
+                ShowExamAdic(idtablaHistorias);
+            }
+
+            else{
+                // addexamenextra();
+                AgregarExamenAdc();
+                limpiarEAdc();
+                ShowExamAdic(idAsignar);
+            }
+
+        }
+    }//GEN-LAST:event_jButton21ActionPerformed
+
+    private void jAdcModifActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jAdcModifActionPerformed
+
+        int idAdicionalM;
+        if (!estadoEstudio.equals("Pendiente")) {
+            idAdicionalM = idAsignar;
+        } else {
+            idAdicionalM = idtablaHistorias;
+        }
+
+        jAdcModif.setEnabled(false);
+        modificarEadc();
+        limpiarEAdc();
+        ShowExamAdic(idAdicionalM);
+
+        jTextObservAdic.setText("");
+        jTextExamenAdic.setText("");
+    }//GEN-LAST:event_jAdcModifActionPerformed
+
+    private void jAdcDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jAdcDeleteActionPerformed
+
+        int fila = jTableAdic.getSelectedRow();
+
+        if (fila == -1) {
+
+            JOptionPane.showMessageDialog(null, "DEBE SELECCIONAR UNA OPCIÓN DE LA TABLA ENFERMEDAD", "CAMPOS", JOptionPane.ERROR_MESSAGE);
+        }
+
+        else{
+
+            if (JOptionPane.showConfirmDialog(rootPane, "¿Realmente desea retirar este estudio?",
+                "Estudios", JOptionPane.YES_NO_OPTION) == JOptionPane.YES_OPTION)  {
+
+            int idValidarAdc;
+            if (!estadoEstudio.equals("Pendiente")) {
+                idValidarAdc = idAsignar;
+            } else {
+                idValidarAdc = idtablaHistorias;
+            }
+
+            jAdcDelete.setEnabled(false);
+            EliminarEadc();
+            limpiarEAdc();
+            ShowExamAdic(idValidarAdc);
+
+            jTextObservAdic.setText("");
+            jTextExamenAdic.setText("");
+        }
+        }
+
+    }//GEN-LAST:event_jAdcDeleteActionPerformed
+
+    private void jButton18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton18ActionPerformed
+
+        if (JOptionPane.showConfirmDialog(rootPane, "¿Esta seguro que desea cancelar la informacion?",
+            "Informacion", JOptionPane.YES_NO_OPTION) == JOptionPane.YES_OPTION)  {
+
+        limpiarTEAdd();
+
+        }
+    }//GEN-LAST:event_jButton18ActionPerformed
+
+    
+    
+     int idEadc;
+    String nomEadc, descripEadc;
+    private void jTableAdicMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTableAdicMouseClicked
+
+        jTableAdic.requestFocusInWindow();
+        int fila = jTableAdic.getSelectedRow();
+        if (fila == -1) {
+            JOptionPane.showMessageDialog(this, "Debe seleccionar un campo de la tabla", "Campos", 1);
+
+        }
+
+        else{ idEadc= (int) (jTableAdic.getValueAt(fila, 0));
+            nomEadc= (jTableAdic.getValueAt(fila, 1).toString());
+            descripEadc= (jTableAdic.getValueAt(fila, 2).toString());
+            jAdcModif.setEnabled(true);
+            jAdcDelete.setEnabled(true);
+
+            jTextExamenAdic.setText(nomEadc);
+            jTextObservAdic.setText(descripEadc);
+
+        }
+
+    }//GEN-LAST:event_jTableAdicMouseClicked
+
+    private void jTableAdicMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTableAdicMouseEntered
+        jTableAdic.requestFocusInWindow();
+    }//GEN-LAST:event_jTableAdicMouseEntered
+
+    private void TXTPcorreoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TXTPcorreoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TXTPcorreoActionPerformed
 
     
      
@@ -4717,7 +4995,7 @@ catch(Exception e){System.out.println("Error searchidpaciente"+e);}
 
             PdfPCell Habitos = new PdfPCell();
             Habitos.setHorizontalAlignment(Element.ALIGN_JUSTIFIED);
-            Habitos.addElement(new Paragraph(jComboBox20.getSelectedItem().toString(), FontFactory.getFont("Arial", 8, Font.NORMAL, BaseColor.BLACK)));
+            Habitos.addElement(new Paragraph(jComboHabitos.getSelectedItem().toString(), FontFactory.getFont("Arial", 8, Font.NORMAL, BaseColor.BLACK)));
             Habitos.setBorder(PdfPCell.NO_BORDER);
             
             PdfPCell Alcohol = new PdfPCell();
@@ -4735,11 +5013,16 @@ catch(Exception e){System.out.println("Error searchidpaciente"+e);}
             Esupefaciente.addElement(new Paragraph(jTConsumoDrugs.getText(), FontFactory.getFont("Arial", 8, Font.NORMAL, BaseColor.BLACK)));
             Esupefaciente.setBorder(PdfPCell.NO_BORDER);
             
-           TablaFuncional5.addCell(Habitos); 
-           TablaFuncional5.addCell(Alcohol); 
-           TablaFuncional5.addCell(Tabaco); 
-           TablaFuncional5.addCell(Esupefaciente); 
-            
+
+            TablaFuncional5.addCell(Habitos); 
+            TablaFuncional5.addCell(Alcohol);
+            TablaFuncional5.addCell(Tabaco); 
+            TablaFuncional5.addCell(Esupefaciente); 
+          
+    
+           
+           
+           
             
             
             PdfPTable TablaFuncional6 = new PdfPTable(4); 
@@ -4778,11 +5061,19 @@ catch(Exception e){System.out.println("Error searchidpaciente"+e);}
             t25columna4.setAlignment(Element.ALIGN_CENTER);
             TablaFuncional6.addCell(t25columna4);
             
-            TablaFuncional6.addCell(new Paragraph(jComboBox7.getSelectedItem().toString(),FontFactory.getFont("Arial",8,Font.NORMAL))); 
-            TablaFuncional6.addCell(new Paragraph(jComboBox8.getSelectedItem().toString(),FontFactory.getFont("Arial",8,Font.NORMAL))); 
-            TablaFuncional6.addCell(new Paragraph(jComboBox9.getSelectedItem().toString(),FontFactory.getFont("Arial",8,Font.NORMAL))); 
-            TablaFuncional6.addCell(new Paragraph(jComboBox4.getSelectedItem().toString(),FontFactory.getFont("Arial",8,Font.NORMAL))); 
             
+            
+                    
+            TablaFuncional6.addCell(new Paragraph(jActividadF.getSelectedItem().toString(),FontFactory.getFont("Arial",8,Font.NORMAL))); 
+            TablaFuncional6.addCell(new Paragraph(Fsemanal.getSelectedItem().toString(),FontFactory.getFont("Arial",8,Font.NORMAL))); 
+            TablaFuncional6.addCell(new Paragraph(jSueno.getSelectedItem().toString(),FontFactory.getFont("Arial",8,Font.NORMAL))); 
+            TablaFuncional6.addCell(new Paragraph(jSexualidad.getSelectedItem().toString(),FontFactory.getFont("Arial",8,Font.NORMAL))); 
+            
+          
+    
+            
+            
+      
             
             
             
@@ -4790,26 +5081,12 @@ catch(Exception e){System.out.println("Error searchidpaciente"+e);}
             
             
             
-            
-            PdfPTable TableFisico1 = new PdfPTable(1); 
-            TableFisico1.getDefaultCell().setBorder(PdfPCell.NO_BORDER);
-
-            TableFisico1.setWidthPercentage(100);  
-            TableFisico1.setWidths(medidaCeldas3);
-            TableFisico1.setHorizontalAlignment(Element.ALIGN_CENTER);
-            TableFisico1.getDefaultCell().setHorizontalAlignment(Element.ALIGN_CENTER);
-           
-            
-            Paragraph t26columna1 = new Paragraph("E X A M E N   F Í S I C O");
-            t26columna1.getFont().setStyle(Font.BOLD);
-            t26columna1.getFont().setSize(10);        
-            t26columna1.setFont(Letra);
-            
-            t26columna1.setAlignment(Element.ALIGN_JUSTIFIED);
-            TableFisico1.setHorizontalAlignment(PdfPCell.ALIGN_JUSTIFIED);
-            TableFisico1.addCell(t26columna1);   
          
-
+            Paragraph tituloFisico = new Paragraph("E X A M E N   F Í S I C O", Letra);
+            tituloFisico.setAlignment(Element.ALIGN_CENTER);
+            tituloFisico.getFont().setStyle(Font.BOLD);
+            tituloFisico.getFont().setSize(10);
+            
             
             
 
@@ -4875,6 +5152,8 @@ catch(Exception e){System.out.println("Error searchidpaciente"+e);}
             TableFisico2.addCell(t33columna4);
             
 
+            
+          
             TableFisico2.addCell(new Paragraph(TXTtalla.getText(),FontFactory.getFont("Arial",8,Font.NORMAL))); 
             TableFisico2.addCell(new Paragraph(TXTpeso.getText(),FontFactory.getFont("Arial",8,Font.NORMAL))); 
             TableFisico2.addCell(new Paragraph(TXTpesoIdeal.getText(),FontFactory.getFont("Arial",8,Font.NORMAL))); 
@@ -4882,6 +5161,10 @@ catch(Exception e){System.out.println("Error searchidpaciente"+e);}
             TableFisico2.addCell(new Paragraph(TXTimc.getText(),FontFactory.getFont("Arial",8,Font.NORMAL))); 
             TableFisico2.addCell(new Paragraph(TXTtemperatura.getText(),FontFactory.getFont("Arial",8,Font.NORMAL))); 
             TableFisico2.addCell(new Paragraph(TXTpulso.getText(),FontFactory.getFont("Arial",8,Font.NORMAL))); 
+            
+            
+           
+       
             
             
             
@@ -6265,7 +6548,7 @@ catch(Exception e){System.out.println("Error searchidpaciente"+e);}
      
            
             
-            Paragraph t67columna1 = new Paragraph("C O N C L U S I Ó N   &   R E C O M E N D A C I O N E S \n\n"+ jComboBox2.getSelectedItem().toString());
+            Paragraph t67columna1 = new Paragraph("C O N C L U S I Ó N   &   R E C O M E N D A C I O N E S \n\n"+ jConclusion.getSelectedItem().toString());
             t67columna1.getFont().setStyle(Font.BOLD);
             t67columna1.getFont().setSize(10);        
             t67columna1.setFont(Letra);
@@ -6424,19 +6707,64 @@ catch(Exception e){System.out.println("Error searchidpaciente"+e);}
     
             }
             
-            
-          doc.add(TablaFuncional5);
-          doc.add(TablaFuncional6);
+          
+      if(!jComboHabitos.getSelectedItem().equals("N/R")
+                   
+              || !jTConsumoAlcohol.getText().equals("")
+              || !jTConsumoTabaco.getText().equals("")
+              || !jTConsumoDrugs.getText().equals("")){ doc.add(TablaFuncional5);    doc.add(saltolinea);}  
+         
+      
+      
+          if(!jActividadF.getSelectedItem().equals("N/R") 
+              || !Fsemanal.getSelectedItem().equals("N/R") 
+              || !jSueno.getSelectedItem().equals("N/R") 
+              || !jSexualidad.getSelectedItem().equals("N/R") ){
+           doc.add(TablaFuncional6);
           doc.add(saltolinea);
+          }
+          
+          
+         
           
           
           
           //EXAMEN FISICO
           
-          doc.add(TableFisico1);
+          if(!TXTpesoIdeal.getText().equals("") ||
+             !TXTpesoAdic.getText().equals("") ||
+             !TXTimc.getText().equals("") ||
+             !TXTaspecto.getText().equals("") ||
+             !TXTabdominal.getText().equals("") ||
+                  
+             !TXTtemperatura.getText().equals("") ||
+             !TXTpulso.getText().equals("") ||
+             !TXTfr.getText().equals("") ||
+             !TXTrespiracion.getText().equals("") ||
+             !TXTtension.getText().equals("") ||
+             !TXTcadera.getText().equals("")  
+                  ){
+          doc.add(tituloFisico);
           doc.add(saltolinea);
-          doc.add(TableFisico2);
-          doc.add(saltolinea);
+          }
+          
+          
+          
+          
+           if(!TXTtalla.getText().equals("0")
+              ||!TXTpeso.getText().equals("0")
+              ||!TXTpesoIdeal.getText().equals("")
+              ||!TXTpesoAdic.getText().equals("")
+              ||!TXTimc.getText().equals("")
+              ||!TXTtemperatura.getText().equals("")
+              ||!TXTpulso.getText().equals("")
+           
+                    
+                    ){    
+           doc.add(TableFisico2);
+          doc.add(saltolinea);}
+
+      
              
           if(!TXTfr.getText().equals("") || !TXTrespiracion.getText().equals("") || !TXTtension.getText().equals("") || !TXTaspecto.getText().equals("")
              || !TXTabdominal.getText().equals("") ||  !TXTcadera.getText().equals("")){
@@ -6448,7 +6776,7 @@ catch(Exception e){System.out.println("Error searchidpaciente"+e);}
           doc.add(saltolinea);
           
           
-          //EXAMEN ELECTRO
+          //EXAMESN ELECTRO
           if(!TxtDiagnosticoElectro.getText().equals("")){
           doc.add(TableElectro);
           doc.add(saltolinea);
@@ -6535,11 +6863,13 @@ catch(Exception e){System.out.println("Error searchidpaciente"+e);}
             
             
             
-            
+         
             //- C O N C L U S I O N -
-  
-          doc.add(TableConclusion);
-          doc.add(saltolinea);
+       if(!jConclusion.getSelectedItem().equals("Seleccionar")){
+            doc.add(TableConclusion);
+            doc.add(saltolinea);
+       }
+     
           doc.add(TableConclusion2);
             
             
@@ -6557,7 +6887,7 @@ catch(Exception e){System.out.println("Error searchidpaciente"+e);}
     
             doc.close();
             archivo.close();
-            JOptionPane.showMessageDialog(null, "GENERANDO REPORTE...", "REPORTE CONSULTA", 1);
+        
             Desktop.getDesktop().open(file);
         } catch (DocumentException | IOException e) {
            System.out.println(e);
@@ -6580,6 +6910,8 @@ catch(Exception e){System.out.println("Error searchidpaciente"+e);}
    ResultSet rs=null;
 
         
+     
+        
         try {
 
             String sql = "select * from tableinfopdfs";
@@ -6600,6 +6932,16 @@ catch(Exception e){System.out.println("Error searchidpaciente"+e);}
         }  
     }
       
+      
+      
+      
+      
+      
+      
+      
+      
+      
+   
       
       
       
@@ -6856,11 +7198,7 @@ catch(Exception e){System.out.println("Error searchidpaciente"+e);}
                 
 "where Id_Especialidades LIKE '%" + idespecialidad + "%'     AND IdPacientes = "+  '"' + PacienteSelec + '"'  +   "ORDER by IdAsignar";    
 
-                
 
-                
-                
-//"ON u.Id_personal=x.IdPersonal WHERE FechaReporte BETWEEN " + '"' + fecha + '"' + "AND"  + '"' + fecha2 + '"' +"ORDER BY  Codigopdf ASC";
             
      
   
@@ -7019,7 +7357,7 @@ String sql = "SELECT Id_historias, Usuario, Id_pacienteh, Fecha_Historia, Archiv
             while (rs.next()) {
                 
                 int estado =rs.getInt("Id_Estadoh"); 
-                if( estado==103){
+                if( estado==103 ){
                 AddPdfConsulta vo = new AddPdfConsulta();
                 vo.setIdHistoria(rs.getInt(1));
                 vo.setNombredoctor(rs.getString(2));
@@ -7268,7 +7606,8 @@ String sql = "SELECT Id_historias, Usuario, Id_pacienteh, Fecha_Historia, Archiv
      
      
      String CMA, MPPS;
-      public void ActivarFirma()  {
+         public void ActivarFirma()  {
+             
         
         Connection con=null;     
         int idfirma=TP.getTexto();
@@ -7644,14 +7983,14 @@ catch(Exception e){System.out.println("Error en mostrar electro "+e);}
        jSmenospausia.setValue(pesoMenospausia);
        jTextArea10.setText(rs.getString("Informe_mestruacion"));
        jTextMotivoConsulta.setText(rs.getString("Motivo_Consulta")); 
-       jComboBox20.setSelectedItem(rs.getString("Tiempo_libre"));
+       jComboHabitos.setSelectedItem(rs.getString("Tiempo_libre"));
        jTConsumoAlcohol.setText(rs.getString("Consumo_alcohol"));
        jTConsumoTabaco.setText(rs.getString("Consumo_tabaco"));
        jTConsumoDrugs.setText(rs.getString("Consumo_estupefacientes"));
-       jComboBox7.setSelectedItem(rs.getString("Actividad_fisica"));
-       jComboBox8.setSelectedItem(rs.getString("Frecuencia_semanal"));
-       jComboBox9.setSelectedItem(rs.getString("Sueno"));
-       jComboBox4.setSelectedItem(rs.getString("Sexualidad"));
+       jActividadF.setSelectedItem(rs.getString("Actividad_fisica"));
+       Fsemanal.setSelectedItem(rs.getString("Frecuencia_semanal"));
+       jSueno.setSelectedItem(rs.getString("Sueno"));
+       jSexualidad.setSelectedItem(rs.getString("Sexualidad"));
        
 
        }
@@ -7933,7 +8272,7 @@ catch(Exception e){System.out.println("Error en mostrar electro "+e);}
        rs=ps.executeQuery();
    
        if (rs.next()){
-       jComboBox2.setSelectedItem(rs.getString("Resultado"));
+       jConclusion.setSelectedItem(rs.getString("Resultado"));
        jTextConclusion.setText(rs.getString("Conclusion"));
        jTextRecomendacion.setText(rs.getString("Recomendacion"));
 
@@ -8059,7 +8398,7 @@ catch(Exception e){System.out.println("Error en mostrar electro "+e);}
     Connection con;
     EnlaceBd cn = new EnlaceBd();
     PreparedStatement ps=null;
-    ResultSet rs;
+    ResultSet rs=null;
               
           try {
  
@@ -8111,7 +8450,7 @@ catch(Exception e){System.out.println("Error en mostrar electro "+e);}
     Connection con;
     EnlaceBd cn = new EnlaceBd();
     PreparedStatement ps=null;
-    ResultSet rs;
+    ResultSet rs=null;
               
           try {
  
@@ -8143,7 +8482,7 @@ catch(Exception e){System.out.println("Error en mostrar electro "+e);}
     Connection con;
     EnlaceBd cn = new EnlaceBd();
     PreparedStatement ps=null;
-    ResultSet rs;
+    ResultSet rs=null;
               
           try {
  
@@ -8175,7 +8514,7 @@ catch(Exception e){System.out.println("Error en mostrar electro "+e);}
     Connection con;
     EnlaceBd cn = new EnlaceBd();
     PreparedStatement ps=null;
-    ResultSet rs;
+    ResultSet rs=null;
               
           try {
  
@@ -8206,7 +8545,7 @@ catch(Exception e){System.out.println("Error en mostrar electro "+e);}
     Connection con;
     EnlaceBd cn = new EnlaceBd();
     PreparedStatement ps=null;
-    ResultSet rs;     
+    ResultSet rs=null;     
           try {
             String sql2 = "INSERT INTO `table_revision`(`Id_historiaR`)  values(?) ";
             
@@ -8217,8 +8556,7 @@ catch(Exception e){System.out.println("Error en mostrar electro "+e);}
  
             ps.executeUpdate();
         
-            ps.close();
-            cn.desconectar();
+      
             
         } catch (Exception e) {
              System.out.println("ERROR EN REGISTRAR REVISION" + e);
@@ -8249,8 +8587,7 @@ catch(Exception e){System.out.println("Error en mostrar electro "+e);}
             ps.setInt(1, idAsignar);
             ps.executeUpdate();
         
-            ps.close();
-            cn.desconectar();
+          
             
         } catch (Exception e) {
              System.out.println("ERROR EN REGISTRAR CONCLUSION" + e);
@@ -8727,14 +9064,14 @@ public void updateRevision() {
         ps.setString(9, jTextArea10.getText());
         ps.setString(10, jTextRevision.getText());
         ps.setString(11, jTextMotivoConsulta.getText());
-        ps.setString(12, jComboBox20.getSelectedItem().toString());
+        ps.setString(12, jComboHabitos.getSelectedItem().toString());
         ps.setString(13, jTConsumoAlcohol.getText());
         ps.setString(14, jTConsumoTabaco.getText());
         ps.setString(15, jTConsumoDrugs.getText());
-        ps.setString(16, jComboBox7.getSelectedItem().toString());
-        ps.setString(17, jComboBox8.getSelectedItem().toString());
-        ps.setString(18, jComboBox9.getSelectedItem().toString());
-        ps.setString(19, jComboBox4.getSelectedItem().toString());
+        ps.setString(16, jActividadF.getSelectedItem().toString());
+        ps.setString(17, Fsemanal.getSelectedItem().toString());
+        ps.setString(18, jSueno.getSelectedItem().toString());
+        ps.setString(19, jSexualidad.getSelectedItem().toString());
         ps.setInt(20, idAsignar);
 
         ps.executeUpdate();
@@ -8963,7 +9300,7 @@ public void updateRevision() {
 
 
 
-        ps.setString(1, jComboBox2.getSelectedItem().toString());
+        ps.setString(1, jConclusion.getSelectedItem().toString());
         ps.setString(2, jTextConclusion.getText());
         ps.setString(3, jTextRecomendacion.getText());
         ps.setInt(4, idAsignar);
@@ -9148,6 +9485,10 @@ public void updateRevision() {
      
      
     int IdPaciente;
+
+
+    
+    
     public void Callpacient() {  
        
        
@@ -9992,7 +10333,7 @@ System.out.println(idantc1);
      
      jTextConclusion.setText("");
      jTextRecomendacion.setText("");
-     jComboBox2.setSelectedItem("Buenas condiciones de salud");
+     jConclusion.setSelectedItem("Seleccionar");
 
      
      
@@ -10017,7 +10358,8 @@ System.out.println(idantc1);
        
         public void setValorB(String labEstudio2) {
         this.labEstudio = labEstudio2;
-    }        
+    }               
+      
          public String getValorB() {
         return labEstudio;
     }
@@ -10032,11 +10374,277 @@ System.out.println(idantc1);
 
      
      
+     private void checkPopup(MouseEvent evt, JTextArea textArea) {
+    if (evt.isPopupTrigger() || (evt.getButton() == MouseEvent.BUTTON3)) {
+        JPopupMenu menu = new JPopupMenu();
+
+      
+        ImageIcon iconCopy = new ImageIcon(getClass().getResource("/icons/copiar.png"));
+        ImageIcon iconPaste = new ImageIcon(getClass().getResource("/icons/pegar.png"));
+
+        JMenuItem itemCopy = new JMenuItem("Copiar", iconCopy);
+        JMenuItem itemPaste = new JMenuItem("Pegar", iconPaste);
+        
+        itemCopy.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                textArea.copy();
+            }
+        });
+
+        itemPaste.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                textArea.paste();
+            }
+        });
+
+        menu.add(itemCopy);
+        menu.add(itemPaste);
+
+        menu.show(evt.getComponent(), evt.getX(), evt.getY());
+    }
+}
      
      
      
      
      
+      int validarEadicional;
+      public void AgregarExamenAdc(){
+  
+     if (!estadoEstudio.equals("Pendiente")) {
+        validarEadicional = idAsignar;
+    } else {
+       validarEadicional = idtablaHistorias;
+    }
+    Connection con=null;
+    EnlaceBd cn = new EnlaceBd();
+    PreparedStatement ps=null;
+    ResultSet rs=null;
+
+        try {
+ 
+      String sql = "INSERT INTO `table_examenadic`(`id_historiadc`, `Nombre_adc`, `Descripcion_adc`) VALUES (?,?,?)";
+
+      
+            con = cn.getConnection();
+            ps = con.prepareStatement(sql);
+            ps.setInt(1, validarEadicional);
+            ps.setString(2, jTextExamenAdic.getText());
+            ps.setString(3, jTextObservAdic.getText());
+        int res = ps.executeUpdate();
+
+        if (res >= 1) {
+            // JOptionPane.showMessageDialog(null, "PROCEDIMIENTO COMPLETADO", "ACTUALIZACIÓN DE DATOS", 1);
+           jTextObservAdic.setText("");
+           jTextExamenAdic.setText("");
+        } else {
+            // JOptionPane.showMessageDialog(null, "ERROR AL ACTUALIZAR PROCEDIMIENTO", "ERROR", JOptionPane.ERROR_MESSAGE);
+        }
+            
+            
+            
+
+            
+        } catch (Exception e) {
+            System.out.println(e);
+            JOptionPane.showMessageDialog(null, "ERROR AL AGREGAR EL EXAMEN", "EXAMENES", JOptionPane.ERROR_MESSAGE);
+           }
+        
+              finally {
+
+        try {
+            if (ps != null) {
+                ps.close();
+            }
+            if (con != null) {
+                con.close();
+            }
+        } catch (SQLException e) {
+            System.out.println("Error al cerrar conexiones: " + e);
+        }
+    }
+        
+        
+
+  }
+      
+      
+       public void modificarEadc(){
+    Connection con=null;
+    EnlaceBd cn = new EnlaceBd();
+    PreparedStatement ps=null;
+    ResultSet rs=null;
+
+        try {
+          
+           
+ 
+            String sql = "update table_examenadic set   Nombre_adc=?, Descripcion_adc=? where  id_adcional=?";
+
+            con = cn.getConnection();
+            ps = con.prepareStatement(sql);
+            ps.setString(1, jTextExamenAdic.getText());
+            ps.setString(2, jTextObservAdic.getText());
+            ps.setInt(3, idEadc);
+            int res = ps.executeUpdate();
+
+            if (res >= 1) {
+                JOptionPane.showMessageDialog(null, "EXAMEN ACTUALIZADO", "ACTUALIZACIÓN DE DATOS", 1);
+            
+                
+            } else {
+                JOptionPane.showMessageDialog(null, "ERROR AL ACTUALIZAR EXAMEN", "ERROR", JOptionPane.ERROR_MESSAGE);
+            }
+            
+            
+        } catch (Exception e) {
+            System.out.println(e);
+           // JOptionPane.showMessageDialog(null, "ERROR AL ACTUALIZAR EL PROCEDIMIENTO", "PROCEDIMIENTOS", JOptionPane.ERROR_MESSAGE);
+           }
+        
+              finally {
+
+        try {
+            if (ps != null) {
+                ps.close();
+            }
+            if (con != null) {
+                con.close();
+            }
+        } catch (SQLException e) {
+            System.out.println("Error al cerrar conexiones: " + e);
+        }
+    }
+        
+                 
+ 
+ 
+ }
+      
+      
+  
+    
+    
+       public void ShowExamAdic(int idadc) {
+
+       
+
+        List<JCAntecedentesFamiliares> lista = AntcDao.showEAdc(idadc);
+        modelo = (DefaultTableModel) jTableAdic.getModel();
+        Object[] ob = new Object[10];
+
+        for (int i = 0; i < lista.size(); i++) {
+
+            ob[0] = lista.get(i).getShowEadc();
+            ob[1] = lista.get(i).getShowNameAdc();
+            ob[2] = lista.get(i).getShowDescriptionAdc();
+   
+            modelo.addRow(ob);
+
+        }
+       jTableAdic.setModel(modelo);
+       jTableAdic.setDefaultEditor(Object.class, null);
+       acomodarEadd();
+            
+
+    }
+     
+     
+     
+     
+        public  void limpiarTEAdd() {
+        DefaultTableModel tb = (DefaultTableModel) jTableAdic.getModel();
+        int a = jTableAdic.getRowCount()-1;
+        for (int i = a; i >= 0; i--) {
+            tb.removeRow(tb.getRowCount()-1);
+        }
+    }
+    
+          public  void limpiarEAdc() {
+        DefaultTableModel tb = (DefaultTableModel)  jTableAdic.getModel();
+        int a =  jTableAdic.getRowCount()-1;
+        for (int i = a; i >= 0; i--) {
+            tb.removeRow(tb.getRowCount()-1);
+        }
+    }
+         
+      public void acomodarEadd()
+    {
+     
+       DefaultTableModel Tabla = (DefaultTableModel)jTableAdic.getModel();
+       DefaultTableCellRenderer Alinear = new DefaultTableCellRenderer();
+       Alinear.setHorizontalAlignment(SwingConstants.CENTER);
+        
+       
+       jTableAdic.getColumnModel().getColumn(0).setMaxWidth(0);
+       jTableAdic.getColumnModel().getColumn(0).setMinWidth(0);
+       jTableAdic.getColumnModel().getColumn(0).setPreferredWidth(0);
+       
+   
+       jTableAdic.getColumnModel().getColumn(Tabla.findColumn("Examen")).setPreferredWidth(150);
+       jTableAdic.getColumnModel().getColumn(Tabla.findColumn("Descripción")).setPreferredWidth(300);
+
+   
+       jTableAdic.getColumnModel().getColumn(Tabla.findColumn("Examen")).setCellRenderer(Alinear);;
+       jTableAdic.getColumnModel().getColumn(Tabla.findColumn("Descripción")).setCellRenderer(Alinear);
+    
+    }
+     
+      
+      
+        
+  public void EliminarEadc(){
+  
+  
+    Connection con=null;
+    EnlaceBd cn = new EnlaceBd();
+    PreparedStatement ps=null;
+    ResultSet rs=null;
+
+        try {
+ 
+            String sql = "DELETE FROM table_examenadic WHERE id_adcional = ? ";
+
+            con = cn.getConnection();
+            ps = con.prepareStatement(sql);
+            ps.setInt(1, idEadc);
+            int res = ps.executeUpdate();
+
+            if (res >= 1) {
+           JOptionPane.showMessageDialog(null, "EXAMEN RETIRADO", "EXAMEN", 1);
+             
+            } else {
+               // JOptionPane.showMessageDialog(null, "ERROR AL ACTUALIZAR PROCEDIMIENTO", "ERROR", JOptionPane.ERROR_MESSAGE);
+            }
+            
+           
+            
+            
+        } catch (Exception e) {
+            System.out.println(e);
+            JOptionPane.showMessageDialog(null, "ERROR AL ELIMINAR EL EXAMEN", "EXAMEN", JOptionPane.ERROR_MESSAGE);
+           }
+        
+        
+      finally {
+
+        try {
+            if (ps != null) {
+                ps.close();
+            }
+            if (con != null) {
+                con.close();
+            }
+        } catch (SQLException e) {
+            System.out.println("Error al cerrar conexiones: " + e);
+        }
+    }
+  }   
+      
+      
+      
+      
+      
    JCambiarState setState = new JCambiarState();
    Mprincipal MP = new Mprincipal();
    DefaultTableModel modelo = new DefaultTableModel();   
@@ -10056,6 +10664,7 @@ System.out.println(idantc1);
     private javax.swing.JButton BtnAgregar;
     private javax.swing.JButton BtnCancelar;
     private javax.swing.JButton BtnGuardar;
+    private javax.swing.JButton BtnGuardar1;
     private javax.swing.JButton BtnImprimirHistoria;
     private javax.swing.JButton BtnImprimirHistoria2;
     private javax.swing.JButton BtnMexamen;
@@ -10067,6 +10676,7 @@ System.out.println(idantc1);
     private com.toedter.calendar.JDateChooser FechaAsignar1;
     private com.toedter.calendar.JDateChooser FechaAsignar2;
     private com.toedter.calendar.JDateChooser FechaNacimiento;
+    private javax.swing.JComboBox<String> Fsemanal;
     private javax.swing.JPanel JPanelAnteriores;
     private javax.swing.JPanel JPanelHistoria;
     private javax.swing.JPanel JPregistro;
@@ -10211,6 +10821,11 @@ System.out.println(idantc1);
     private javax.swing.JFormattedTextField fecha2;
     private javax.swing.JFormattedTextField fecha3;
     private javax.swing.JButton jAButton30;
+    private javax.swing.JComboBox<String> jActividadF;
+    private javax.swing.JButton jAdcDelete;
+    private javax.swing.JButton jAdcModif;
+    private javax.swing.JButton jButton18;
+    private javax.swing.JButton jButton21;
     private javax.swing.JButton jButton26;
     private javax.swing.JButton jButton27;
     private javax.swing.JButton jButton29;
@@ -10255,13 +10870,9 @@ System.out.println(idantc1);
     private javax.swing.JComboBox<String> jComboBox17;
     private javax.swing.JComboBox<String> jComboBox18;
     private javax.swing.JComboBox<String> jComboBox19;
-    private javax.swing.JComboBox<String> jComboBox2;
-    private javax.swing.JComboBox<String> jComboBox20;
     private javax.swing.JComboBox<String> jComboBox3;
-    private javax.swing.JComboBox<String> jComboBox4;
-    private javax.swing.JComboBox<String> jComboBox7;
-    private javax.swing.JComboBox<String> jComboBox8;
-    private javax.swing.JComboBox<String> jComboBox9;
+    private javax.swing.JComboBox<String> jComboHabitos;
+    private javax.swing.JComboBox<String> jConclusion;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -10310,6 +10921,7 @@ System.out.println(idantc1);
     private javax.swing.JPanel jPanel21;
     private javax.swing.JPanel jPanel22;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
@@ -10335,6 +10947,8 @@ System.out.println(idantc1);
     private javax.swing.JScrollPane jScrollPane22;
     private javax.swing.JScrollPane jScrollPane23;
     private javax.swing.JScrollPane jScrollPane24;
+    private javax.swing.JScrollPane jScrollPane25;
+    private javax.swing.JScrollPane jScrollPane31;
     private javax.swing.JScrollPane jScrollPane32;
     private javax.swing.JScrollPane jScrollPane33;
     private javax.swing.JScrollPane jScrollPane34;
@@ -10357,15 +10971,18 @@ System.out.println(idantc1);
     private javax.swing.JSeparator jSeparator7;
     private javax.swing.JSeparator jSeparator8;
     private javax.swing.JSeparator jSeparator9;
+    private javax.swing.JComboBox<String> jSexualidad;
     private javax.swing.JSpinner jSmenospausia;
     private javax.swing.JSpinner jSpartos;
     private javax.swing.JSpinner jSpinner2;
+    private javax.swing.JComboBox<String> jSueno;
     private javax.swing.JTextArea jTConsumoAlcohol;
     private javax.swing.JTextArea jTConsumoDrugs;
     private javax.swing.JTextArea jTConsumoTabaco;
     private javax.swing.JTabbedPane jTabbedPane2;
     private javax.swing.JTabbedPane jTabbedPane3;
     private javax.swing.JTable jTableAF2;
+    private javax.swing.JTable jTableAdic;
     private javax.swing.JTable jTableAntcPers;
     private javax.swing.JTable jTableAntecedentesF;
     private javax.swing.JTable jTableAntpersonal;
@@ -10374,9 +10991,11 @@ System.out.println(idantc1);
     private javax.swing.JTextArea jTextArea10;
     private javax.swing.JTextArea jTextConclusion;
     private javax.swing.JTextArea jTextCriterios;
+    private javax.swing.JTextField jTextExamenAdic;
     private javax.swing.JTextArea jTextIngreso;
     private javax.swing.JTextArea jTextManejo;
     private javax.swing.JTextArea jTextMotivoConsulta;
+    private javax.swing.JTextArea jTextObservAdic;
     private javax.swing.JTextArea jTextRecomendacion;
     private javax.swing.JTextArea jTextRevision;
     private javax.swing.JTextArea jTextTratatamiento;

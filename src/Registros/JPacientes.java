@@ -133,6 +133,7 @@ public class JPacientes extends javax.swing.JInternalFrame {
         jPanel2.add(TXTPnombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 70, 200, 50));
 
         TXTPdireccion.setColumns(20);
+        TXTPdireccion.setLineWrap(true);
         TXTPdireccion.setRows(5);
         TXTPdireccion.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "Dirección"));
         TXTPdireccion.addKeyListener(new java.awt.event.KeyAdapter() {

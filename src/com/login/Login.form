@@ -340,7 +340,7 @@
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Agency FB" size="18" style="1"/>
+              <Font name="Arial Narrow" size="18" style="1"/>
             </Property>
             <Property name="text" type="java.lang.String" value="&#xbf;Olvidaste la contrase&#xf1;a?"/>
             <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
@@ -352,7 +352,7 @@
           </Events>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="200" y="360" width="-1" height="-1"/>
+              <AbsoluteConstraints x="160" y="360" width="-1" height="-1"/>
             </Constraint>
           </Constraints>
         </Component>

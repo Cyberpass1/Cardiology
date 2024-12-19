@@ -49,7 +49,7 @@ public class recuperar extends javax.swing.JFrame {
         //test();
         
         
-          
+           jPanel9.setVisible(false);
   try{    
        setIconImage(ImageIO.read(new File("C:\\Cyberia\\src\\imagenes\\Cardiologylogo.png")));   
    }
@@ -66,33 +66,33 @@ catch (Exception ex){
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
+        jPanel7 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
-        jLabel9 = new javax.swing.JLabel();
         usuariotxt = new javax.swing.JTextField();
-        jLabel7 = new javax.swing.JLabel();
         BtnBuscar = new javax.swing.JButton();
-        jLabel11 = new javax.swing.JLabel();
         jButton3 = new javax.swing.JButton();
         Cedula = new javax.swing.JTextField();
-        jPanel6 = new javax.swing.JPanel();
         jLabel13 = new javax.swing.JLabel();
-        jPanel4 = new javax.swing.JPanel();
-        recuperar = new javax.swing.JTabbedPane();
-        jPanel2 = new javax.swing.JPanel();
-        panelImage1 = new org.edisoncor.gui.panel.PanelImage();
-        jPanel5 = new javax.swing.JPanel();
+        title = new javax.swing.JLabel();
+        title2 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jPanel9 = new javax.swing.JPanel();
+        TxtPregunta2 = new javax.swing.JTextField();
+        Txtrespuesta2 = new javax.swing.JPasswordField();
+        TxtPregunta3 = new javax.swing.JTextField();
+        Txtrespuesta3 = new javax.swing.JPasswordField();
+        b1 = new javax.swing.JButton();
+        TxtPregunta1 = new javax.swing.JTextField();
+        Txtrespuesta1 = new javax.swing.JPasswordField();
+        jLabel14 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
         jPanel8 = new javax.swing.JPanel();
         jButton4 = new javax.swing.JButton();
         nuevaclave1 = new javax.swing.JPasswordField();
         nuevaclave = new javax.swing.JPasswordField();
-        Txtrespuesta1 = new javax.swing.JPasswordField();
-        Txtrespuesta2 = new javax.swing.JPasswordField();
-        Txtrespuesta3 = new javax.swing.JPasswordField();
-        TxtPregunta1 = new javax.swing.JTextField();
-        TxtPregunta3 = new javax.swing.JTextField();
-        TxtPregunta2 = new javax.swing.JTextField();
-        b1 = new javax.swing.JButton();
-        jLabel14 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(0, 51, 102));
@@ -101,15 +101,15 @@ catch (Exception ex){
 
         jPanel1.setBackground(new java.awt.Color(204, 255, 204));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 601));
 
-        jPanel3.setBackground(new java.awt.Color(0, 0, 51));
-        jPanel3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel7.setBackground(new java.awt.Color(0, 0, 51));
+        jPanel7.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel3.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel3.setMinimumSize(new java.awt.Dimension(380, 560));
+        jPanel3.setPreferredSize(new java.awt.Dimension(370, 590));
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel9.setFont(new java.awt.Font("Lucida Calligraphy", 1, 18)); // NOI18N
-        jLabel9.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel9.setText("Cédula");
-        jPanel3.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 270, -1, -1));
 
         usuariotxt.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 2, 1, 1, new java.awt.Color(0, 0, 0)));
         usuariotxt.setMargin(new java.awt.Insets(3, 2, 2, 2));
@@ -126,97 +126,114 @@ catch (Exception ex){
                 usuariotxtKeyPressed(evt);
             }
         });
-        jPanel3.add(usuariotxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 190, 350, 40));
+        jPanel3.add(usuariotxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 260, 340, 40));
 
-        jLabel7.setFont(new java.awt.Font("Lucida Calligraphy", 1, 18)); // NOI18N
-        jLabel7.setText("  Recuperar contraseña");
-        jPanel3.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 30, 260, 28));
-
-        BtnBuscar.setFont(new java.awt.Font("Lucida Calligraphy", 0, 18)); // NOI18N
-        BtnBuscar.setForeground(new java.awt.Color(255, 255, 255));
-        BtnBuscar.setText("Buscar");
-        BtnBuscar.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
+        BtnBuscar.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        BtnBuscar.setText("BUSCAR");
+        BtnBuscar.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         BtnBuscar.setContentAreaFilled(false);
+        BtnBuscar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         BtnBuscar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BtnBuscarActionPerformed(evt);
             }
         });
-        jPanel3.add(BtnBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 440, 350, 30));
+        jPanel3.add(BtnBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 440, 340, 30));
 
-        jLabel11.setFont(new java.awt.Font("Lucida Calligraphy", 1, 18)); // NOI18N
-        jLabel11.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel11.setText("Usuario");
-        jPanel3.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 150, -1, -1));
-
-        jButton3.setFont(new java.awt.Font("Lucida Calligraphy", 0, 18)); // NOI18N
-        jButton3.setForeground(new java.awt.Color(255, 255, 255));
-        jButton3.setText("Volver");
-        jButton3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
+        jButton3.setBackground(new java.awt.Color(0, 0, 102));
+        jButton3.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jButton3.setText("VOLVER");
+        jButton3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jButton3.setContentAreaFilled(false);
+        jButton3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);
             }
         });
-        jPanel3.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 480, 350, 30));
+        jPanel3.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 480, 340, 30));
 
         Cedula.setText("V-");
         Cedula.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jPanel3.add(Cedula, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 310, 350, 40));
-
-        jPanel6.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-
-        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
-        jPanel6.setLayout(jPanel6Layout);
-        jPanel6Layout.setHorizontalGroup(
-            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 358, Short.MAX_VALUE)
-        );
-        jPanel6Layout.setVerticalGroup(
-            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 48, Short.MAX_VALUE)
-        );
-
-        jPanel3.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 360, 50));
+        Cedula.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                CedulaKeyPressed(evt);
+            }
+        });
+        jPanel3.add(Cedula, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 340, 340, 40));
 
         jLabel13.setBackground(new java.awt.Color(255, 255, 255));
         jLabel13.setFont(new java.awt.Font("Lucida Calligraphy", 1, 10)); // NOI18N
-        jLabel13.setForeground(new java.awt.Color(255, 255, 255));
         jLabel13.setText("Realizando cambios, espera antes de volver...");
         jPanel3.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 520, 290, 40));
 
-        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 410, 620));
+        title.setFont(new java.awt.Font("Roboto Black", 1, 24)); // NOI18N
+        title.setText("CÉDULA");
+        jPanel3.add(title, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 310, -1, -1));
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 601));
+        title2.setFont(new java.awt.Font("Roboto Black", 1, 24)); // NOI18N
+        title2.setText("USUARIO");
+        jPanel3.add(title2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 230, -1, -1));
 
-        jPanel4.setBackground(new java.awt.Color(0, 51, 51));
-        jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jLabel1.setMinimumSize(new java.awt.Dimension(380, 290));
+        jPanel3.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 10, -1, -1));
 
-        recuperar.setBackground(new java.awt.Color(0, 51, 51));
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/imgDoctora.jpg"))); // NOI18N
+        jLabel4.setMinimumSize(new java.awt.Dimension(380, 290));
+        jPanel3.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 10, -1, -1));
 
-        jPanel2.setBackground(new java.awt.Color(0, 0, 0));
-        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jPanel7.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 370, 580));
 
-        panelImage1.setBackground(new java.awt.Color(255, 255, 255));
-        panelImage1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/heart-2561958_1280-removebg-preview.png"))); // NOI18N
-        panelImage1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        jPanel2.add(panelImage1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 410, 590));
+        jPanel9.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel9.setPreferredSize(new java.awt.Dimension(390, 582));
+        jPanel9.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        recuperar.addTab("tab1", jPanel2);
+        TxtPregunta2.setEditable(false);
+        TxtPregunta2.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "Segunda Pregunta")));
+        jPanel9.add(TxtPregunta2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 140, 190, 50));
 
-        jPanel5.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        Txtrespuesta2.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "Respuesta 2"));
+        jPanel9.add(Txtrespuesta2, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 140, 170, 50));
+
+        TxtPregunta3.setEditable(false);
+        TxtPregunta3.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "Tercera Pregunta")));
+        jPanel9.add(TxtPregunta3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 190, 190, 50));
+
+        Txtrespuesta3.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "Respuesta 3"));
+        jPanel9.add(Txtrespuesta3, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 190, 170, 50));
+
+        b1.setText("Verificar");
+        b1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        b1.setContentAreaFilled(false);
+        b1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        b1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b1ActionPerformed(evt);
+            }
+        });
+        jPanel9.add(b1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 260, 360, 40));
+
+        TxtPregunta1.setEditable(false);
+        TxtPregunta1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "Primera Pregunta")));
+        jPanel9.add(TxtPregunta1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, 190, 50));
+
+        Txtrespuesta1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "Respuesta 1"));
+        jPanel9.add(Txtrespuesta1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 90, 170, 50));
+
+        jLabel14.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel14.setFont(new java.awt.Font("Lucida Calligraphy", 1, 18)); // NOI18N
+        jLabel14.setText("Preguntas de seguridad");
+        jPanel9.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 30, 260, 30));
+        jPanel9.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 70, 70));
 
         jPanel8.setBackground(new java.awt.Color(255, 255, 255));
         jPanel8.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "Cambio de contraseña"));
         jPanel8.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jButton4.setText("Confirmar");
+        jButton4.setText("CONFIRMAR");
         jButton4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jButton4.setContentAreaFilled(false);
-        jButton4.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jButton4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton4ActionPerformed(evt);
@@ -230,154 +247,240 @@ catch (Exception ex){
         nuevaclave.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "Nueva clave"));
         jPanel8.add(nuevaclave, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 40, 280, 40));
 
-        jPanel5.add(jPanel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 360, 360, 210));
+        jPanel9.add(jPanel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 330, 360, 230));
 
-        Txtrespuesta1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "Respuesta 1"));
-        jPanel5.add(Txtrespuesta1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 70, 160, 50));
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/candado (1).png"))); // NOI18N
+        jPanel9.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 70, 70));
 
-        Txtrespuesta2.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "Respuesta 2"));
-        jPanel5.add(Txtrespuesta2, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 140, 160, 50));
+        jPanel7.add(jPanel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 10, 410, 580));
 
-        Txtrespuesta3.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "Respuesta 3"));
-        jPanel5.add(Txtrespuesta3, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 200, 160, 50));
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/LogoPag.png"))); // NOI18N
+        jPanel7.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 40, 150, 140));
 
-        TxtPregunta1.setEditable(false);
-        TxtPregunta1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "Primera Pregunta")));
-        TxtPregunta1.setOpaque(false);
-        jPanel5.add(TxtPregunta1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, 200, 50));
-
-        TxtPregunta3.setEditable(false);
-        TxtPregunta3.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "Tercera Pregunta")));
-        TxtPregunta3.setOpaque(false);
-        jPanel5.add(TxtPregunta3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 200, 200, 50));
-
-        TxtPregunta2.setEditable(false);
-        TxtPregunta2.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "Segunda Pregunta")));
-        TxtPregunta2.setOpaque(false);
-        jPanel5.add(TxtPregunta2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 140, 200, 50));
-
-        b1.setBackground(new java.awt.Color(255, 255, 255));
-        b1.setText("Verificar");
-        b1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        b1.setContentAreaFilled(false);
-        b1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        b1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                b1ActionPerformed(evt);
-            }
-        });
-        jPanel5.add(b1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 270, 360, 30));
-
-        jLabel14.setBackground(new java.awt.Color(0, 0, 0));
-        jLabel14.setFont(new java.awt.Font("Lucida Calligraphy", 1, 18)); // NOI18N
-        jLabel14.setText("Preguntas de seguridad");
-        jPanel5.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 20, 260, 30));
-
-        recuperar.addTab("tab2", jPanel5);
-
-        jPanel4.add(recuperar, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, -30, 420, 650));
-
-        getContentPane().add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 0, 470, 601));
+        getContentPane().add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 810, 601));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void usuariotxtFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_usuariotxtFocusGained
-  
-          if(usuariotxt.getText().trim().equals("Coloca tu usuario")) { usuariotxt.setText("");}      
-        
+
+        if(usuariotxt.getText().trim().equals("Coloca tu usuario")) { usuariotxt.setText("");}
 
     }//GEN-LAST:event_usuariotxtFocusGained
+
+    private void usuariotxtFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_usuariotxtFocusLost
+
+        if(usuariotxt.getText().trim().equals(""))
+        {
+
+            // respuestatxt.setText("");
+
+        }
+        usuariotxt.setForeground(new Color(153,153,153));
+    }//GEN-LAST:event_usuariotxtFocusLost
+
+    private void usuariotxtKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_usuariotxtKeyPressed
+        /*
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER){
+            try{
+                String sql = "SELECT * FROM tab_acceso WHERE Id_Personal=?";
+                ps = con.prepareStatement(sql);
+                ps.setString(1, usuariotxt.getText());
+                rs=ps.executeQuery();
+
+                if(rs.next())
+                {
+                    String pregunta1;
+                    String pregunta2;
+                    String pregunta3;
+
+                    pregunta1=(rs.getString("Pregunta_1"));
+                    pregunta2=(rs.getString("Pregunta_2"));
+                    pregunta3=(rs.getString("Pregunta_3"));
+
+                }else{  JOptionPane.showMessageDialog(null,"El usuario no existe", "RECUPERAR", 1);}
+
+            }
+            catch(Exception ex ){  JOptionPane.showMessageDialog(null,ex);}
+
+        }*/
+    }//GEN-LAST:event_usuariotxtKeyPressed
+
+    private void BtnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnBuscarActionPerformed
+
+        checkInformation();
+
+    }//GEN-LAST:event_BtnBuscarActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+
+        Login me = new Login();
+        me.setLocationRelativeTo(null);
+        me.setVisible(true);
+        dispose();
+
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    
+       public void checkInformation(){
+    
+        
+           if( usuariotxt.getText().trim().equals("") ||  Cedula.getText().trim().equals("V-")  ){ JOptionPane.showMessageDialog(null, "Debe completar los campos", "RECUPERAR", JOptionPane.ERROR_MESSAGE);}
+      
+           
+           else{
+           
+           try{
+            String sql = "SELECT Usuario,  Cedula, Pregunta1, Pregunta2, Pregunta3\n" +
+"FROM table_usuario u\n" +
+"INNER JOIN table_personal h\n" +
+"ON u.IdPersonal=h.IdPersonal\n" +
+"WHERE Usuario=? and Cedula=?";
+            
+            
+            con = EnlaceBd.getConnection();
+       ps = con.prepareStatement(sql);
+       ps.setString(1, usuariotxt.getText());
+       ps.setString(2, Cedula.getText());
+       rs=ps.executeQuery();
+
+       
+       if(rs.next())
+            {
+                
+                String pregunta1, pregunta2, pregunta3;
+                pregunta1=(rs.getString("Pregunta1"));
+                pregunta2=(rs.getString("Pregunta2"));
+                pregunta3=(rs.getString("Pregunta3"));
+                //question.setText(pregunta1);
+      jPanel9.setVisible(true);
+      count=1;
+      TxtPregunta1.setText(pregunta1);
+      TxtPregunta2.setText(pregunta2);
+      TxtPregunta3.setText(pregunta3);
+      
+    // usuariotxt.setEnabled(false); 
+     jPanel8.setVisible(false);
+  
+      b1.setEnabled(true);
+    
+      
+      
+      
+            }else{  JOptionPane.showMessageDialog(null,"El usuario o cédula no son correctos", "RECUPERAR", 1);}
+              
+        }
+        catch(Exception ex ){  JOptionPane.showMessageDialog(null,ex);}
+           
+           }
+           
+    
+    }
+    
+    
+    private void CedulaKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_CedulaKeyPressed
+
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+            checkInformation();
+        }
+    }//GEN-LAST:event_CedulaKeyPressed
+
+    private void b1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b1ActionPerformed
+        String usuario = this.usuariotxt.getText();
+        String respuesta = (encriptar.ecnode(Txtrespuesta1.getText()));
+        String respuesta2 = (encriptar.ecnode(Txtrespuesta2.getText()));
+        String respuesta3 = (encriptar.ecnode(Txtrespuesta3.getText()));
+        if( Txtrespuesta1.getText().equals("")||Txtrespuesta2.getText().equals("") ||Txtrespuesta3.getText().equals("")) { JOptionPane.showMessageDialog(null, "Debe completar los campos", "RECUPERAR", JOptionPane.ERROR_MESSAGE);}
+
+        else{
+
+            try {
+                String query="SELECT * FROM table_usuario WHERE Usuario=? And Respuesta1='"+respuesta+"'" + "And Respuesta2='"+respuesta2+"'"+ "And Respuesta3='"+respuesta3+"'";
+                ps= con.prepareStatement(query);
+                ps.setString(1, usuario);
+                rs = ps.executeQuery();
+
+                if(rs.next())
+                {
+                    jPanel8.setVisible(true);
+                    b1.setEnabled(false);
+
+                }
+                else{JOptionPane.showMessageDialog(null,"Respuestas Incorrectas", "RECUPERAR", 1);}
+            }         catch(Exception e){System.out.println("");}}
+
+    }//GEN-LAST:event_b1ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+
+        if (!this.nuevaclave.getText().equals(this.nuevaclave1.getText())){
+
+            JOptionPane.showMessageDialog(null, "Verificar: Las contraseñas no coinciden", "Contraseñas no coinciden", JOptionPane.INFORMATION_MESSAGE);
+            nuevaclave.setText("");
+            nuevaclave1.setText("");
+            this.nuevaclave.requestFocus();
+            return;
+        }
+
+        else if (nuevaclave.getText().equals("")|| nuevaclave1.getText().equals("") )
+        {
+
+            JOptionPane.showMessageDialog(null, "LOS CAMPOS NO PUEDEN ESTAR VACIOS", "CAMPOS VACIOS", JOptionPane.INFORMATION_MESSAGE);
+        }
+
+        else{
+
+            try {
+
+                String sql = "update table_usuario set Clave=? where Usuario=? ";
+
+                ps = con.prepareStatement(sql);
+                ps.setString(1, encriptar.ecnode(String.valueOf(nuevaclave.getPassword())));
+                ps.setString(2, usuariotxt.getText());
+
+                int res = ps.executeUpdate();
+
+                if (res >= 1) {
+
+                    CallId();
+
+                    jButton3.setEnabled(false);
+                    jButton4.setEnabled(false);
+                    jLabel13.setVisible(true);
+
+                    email();
+
+                    jButton3.setEnabled(true);
+                    jButton4.setEnabled(true);
+                    jLabel13.setVisible(false);
+
+                    JOptionPane.showMessageDialog(null, "ESTIMADO USUARIO, SU CONTRASEÑA HA SIDO ACTUALIZADA", "ACTUALIZAR CONTRASEÑA", 1);
+                    nuevaclave.setText("");
+                    nuevaclave1.setText("");
+                    usuariotxt.setText("");
+                    Cedula.setText("V-");
+                    jPanel9.setVisible(false);
+
+                } else {
+                    JOptionPane.showMessageDialog(null, "Fallo al actualizar  ....");
+                }
+            } catch (Exception e) {
+                {System.out.println(e);
+                    jButton3.setEnabled(true);
+                }
+            }
+
+        }
+
+    }//GEN-LAST:event_jButton4ActionPerformed
 
     JFormattedTextField tf = new JFormattedTextField();
     
    
     
     
-    private void usuariotxtFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_usuariotxtFocusLost
-      
-        if(usuariotxt.getText().trim().equals("")) 
-        {
-        usuariotxt.setText("COLOQUE EL USUARIO");
     
-       // respuestatxt.setText("");
-       
-        
-        }
-        usuariotxt.setForeground(new Color(153,153,153));
-    }//GEN-LAST:event_usuariotxtFocusLost
-
-    private void b1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b1ActionPerformed
-       String usuario = this.usuariotxt.getText();
-       String respuesta = (encriptar.ecnode(Txtrespuesta1.getText()));
-       String respuesta2 = (encriptar.ecnode(Txtrespuesta2.getText()));
-       String respuesta3 = (encriptar.ecnode(Txtrespuesta3.getText()));
-        if( Txtrespuesta1.getText().equals("")||Txtrespuesta2.getText().equals("") ||Txtrespuesta3.getText().equals("")) { JOptionPane.showMessageDialog(null, "Debe completar los campos", "RECUPERAR", JOptionPane.ERROR_MESSAGE);}
-    
-        else{      
-
-         
-             try {
-            String query="SELECT * FROM table_usuario WHERE Usuario=? And Respuesta1='"+respuesta+"'" + "And Respuesta2='"+respuesta2+"'"+ "And Respuesta3='"+respuesta3+"'";
-            ps= con.prepareStatement(query);
-            ps.setString(1, usuario);
-            rs = ps.executeQuery();
-            
-            if(rs.next())
-            {
-               jPanel8.setVisible(true);
-                b1.setEnabled(false);
-      
-            }
-            else{JOptionPane.showMessageDialog(null,"Respuestas Incorrectas", "RECUPERAR", 1);}
-             }         catch(Exception e){System.out.println("");}}
-        
-        
-    }//GEN-LAST:event_b1ActionPerformed
-
-    
-    
-    private void usuariotxtKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_usuariotxtKeyPressed
-     /*  
-        if (evt.getKeyCode() == KeyEvent.VK_ENTER){
-        try{
-            String sql = "SELECT * FROM tab_acceso WHERE Id_Personal=?";
-            ps = con.prepareStatement(sql);
-            ps.setString(1, usuariotxt.getText());
-            rs=ps.executeQuery();
-            
-            if(rs.next())
-            {
-                String pregunta1;
-                String pregunta2;
-                String pregunta3;
-                
-                pregunta1=(rs.getString("Pregunta_1"));
-                pregunta2=(rs.getString("Pregunta_2"));
-                pregunta3=(rs.getString("Pregunta_3"));
-                
-            }else{  JOptionPane.showMessageDialog(null,"El usuario no existe", "RECUPERAR", 1);}
-                
-        }
-        catch(Exception ex ){  JOptionPane.showMessageDialog(null,ex);}
-        
-        }*/
-    }//GEN-LAST:event_usuariotxtKeyPressed
-
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-      
-      
-       
-        Login me = new Login();
-        me.setLocationRelativeTo(null);
-        me.setVisible(true);
-        dispose();
-       
-        
-        
-        
-    }//GEN-LAST:event_jButton3ActionPerformed
-   private int count =0;
+       private int count =0;
     
     public void sad()
     {
@@ -452,136 +555,6 @@ catch (Exception ex){
     }
     
     
-    private void BtnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnBuscarActionPerformed
-
-        
-           if( usuariotxt.getText().trim().equals("") ||  Cedula.getText().trim().equals("V-")  ){ JOptionPane.showMessageDialog(null, "Debe completar los campos", "RECUPERAR", JOptionPane.ERROR_MESSAGE);}
-      
-           
-           else{
-           
-           try{
-            String sql = "SELECT Usuario,  Cedula, Pregunta1, Pregunta2, Pregunta3\n" +
-"FROM table_usuario u\n" +
-"INNER JOIN table_personal h\n" +
-"ON u.IdPersonal=h.IdPersonal\n" +
-"WHERE Usuario=? and Cedula=?";
-            
-            
-            con = EnlaceBd.getConnection();
-       ps = con.prepareStatement(sql);
-       ps.setString(1, usuariotxt.getText());
-       ps.setString(2, Cedula.getText());
-       rs=ps.executeQuery();
-
-       
-       if(rs.next())
-            {
-                
-                String pregunta1, pregunta2, pregunta3;
-                pregunta1=(rs.getString("Pregunta1"));
-                pregunta2=(rs.getString("Pregunta2"));
-                pregunta3=(rs.getString("Pregunta3"));
-                //question.setText(pregunta1);
-      recuperar.setSelectedIndex(1);
-      count=1;
-      TxtPregunta1.setText(pregunta1);
-      TxtPregunta2.setText(pregunta2);
-      TxtPregunta3.setText(pregunta3);
-      
-    // usuariotxt.setEnabled(false); 
-     jPanel8.setVisible(false);
-  
-      b1.setEnabled(true);
-    
-      
-      
-      
-            }else{  JOptionPane.showMessageDialog(null,"El usuario o cédula no son correctos", "RECUPERAR", 1);}
-              
-        }
-        catch(Exception ex ){  JOptionPane.showMessageDialog(null,ex);}
-           
-           }
-           
-           
-           
-    }//GEN-LAST:event_BtnBuscarActionPerformed
-
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-     
-        if (!this.nuevaclave.getText().equals(this.nuevaclave1.getText())){
- 
-           JOptionPane.showMessageDialog(null, "Verificar: Las contraseñas no coinciden", "Contraseñas no coinciden", JOptionPane.INFORMATION_MESSAGE);
-           nuevaclave.setText("");
-           nuevaclave1.setText("");
-           this.nuevaclave.requestFocus();
-           return;
-        }
-        
-        else if (nuevaclave.getText().equals("")|| nuevaclave1.getText().equals("") )
-        {
-        
-           JOptionPane.showMessageDialog(null, "LOS CAMPOS NO PUEDEN ESTAR VACIOS", "CAMPOS VACIOS", JOptionPane.INFORMATION_MESSAGE);
-        }
-        
-        
-        
-        else{
-            
-             try {
-           
-
-            
-            String sql = "update table_usuario set Clave=? where Usuario=? ";
-
-
-      
-            ps = con.prepareStatement(sql);
-            ps.setString(1, encriptar.ecnode(String.valueOf(nuevaclave.getPassword())));
-            ps.setString(2, usuariotxt.getText());
-
-            int res = ps.executeUpdate();
-
-            if (res >= 1) {
-              
-           CallId();
-           
-           
-           jButton3.setEnabled(false);
-           jButton4.setEnabled(false);
-           jLabel13.setVisible(true);
-           
-           
-           email();
-           
-           
-           jButton3.setEnabled(true);
-           jButton4.setEnabled(true);
-           jLabel13.setVisible(false);
-           
-           JOptionPane.showMessageDialog(null, "ESTIMADO USUARIO, SU CONTRASEÑA HA SIDO ACTUALIZADA", "ACTUALIZAR CONTRASEÑA", 1);
-           nuevaclave.setText("");
-           nuevaclave1.setText("");
-           usuariotxt.setText("");
-           Cedula.setText("V-");
-           recuperar.setSelectedIndex(0);
-       
-            } else {
-                JOptionPane.showMessageDialog(null, "Fallo al actualizar  ....");
-            }
-        } catch (Exception e) {
-           {System.out.println(e);}
-        }
-
-    
-            
-            
-            }
-
-
-    }//GEN-LAST:event_jButton4ActionPerformed
-
     public String porcentaje, cedula, correo;
    
     
@@ -798,22 +771,22 @@ catch (Exception ex){
     private javax.swing.JButton b1;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
-    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel9;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
-    private javax.swing.JPanel jPanel5;
-    private javax.swing.JPanel jPanel6;
+    private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
+    private javax.swing.JPanel jPanel9;
     private javax.swing.JPasswordField nuevaclave;
     private javax.swing.JPasswordField nuevaclave1;
-    private org.edisoncor.gui.panel.PanelImage panelImage1;
-    private javax.swing.JTabbedPane recuperar;
+    private javax.swing.JLabel title;
+    private javax.swing.JLabel title2;
     private javax.swing.JTextField usuariotxt;
     // End of variables declaration//GEN-END:variables
 }

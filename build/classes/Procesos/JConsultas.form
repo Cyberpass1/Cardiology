@@ -10,6 +10,9 @@
       <SubComponents>
         <MenuItem class="javax.swing.JMenuItem" name="jcorreo">
           <Properties>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="3" name="/Icons/correo-electronico.png"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="Enviar al correo"/>
           </Properties>
           <Events>
@@ -170,8 +173,8 @@
                       </Properties>
                       <Constraints>
                         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-                          <JTabbedPaneConstraints tabName="    | Motivo &amp; Antecedentes |">
-                            <Property name="tabTitle" type="java.lang.String" value="    | Motivo &amp; Antecedentes |"/>
+                          <JTabbedPaneConstraints tabName="Motivo &amp; Antecedentes |">
+                            <Property name="tabTitle" type="java.lang.String" value="Motivo &amp; Antecedentes |"/>
                           </JTabbedPaneConstraints>
                         </Constraint>
                       </Constraints>
@@ -1159,8 +1162,8 @@
                       </Properties>
                       <Constraints>
                         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-                          <JTabbedPaneConstraints tabName="Revisi&#xf3;n Funcional |">
-                            <Property name="tabTitle" type="java.lang.String" value="Revisi&#xf3;n Funcional |"/>
+                          <JTabbedPaneConstraints tabName="Revisi&#xf3;n |">
+                            <Property name="tabTitle" type="java.lang.String" value="Revisi&#xf3;n |"/>
                           </JTabbedPaneConstraints>
                         </Constraint>
                       </Constraints>
@@ -1936,23 +1939,24 @@
                                 </Component>
                               </SubComponents>
                             </Container>
-                            <Component class="javax.swing.JComboBox" name="jComboBox20">
+                            <Component class="javax.swing.JComboBox" name="jComboHabitos">
                               <Properties>
                                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                                   <Font name="Tahoma" size="10" style="0"/>
                                 </Property>
                                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                                  <StringArray count="10">
-                                    <StringItem index="0" value="Practica deportes"/>
-                                    <StringItem index="1" value="Lectura"/>
-                                    <StringItem index="2" value="Monta&#xf1;ismo"/>
-                                    <StringItem index="3" value="Gimnasio"/>
-                                    <StringItem index="4" value="Fiestas"/>
-                                    <StringItem index="5" value="Baile"/>
-                                    <StringItem index="6" value="Televisi&#xf3;n"/>
-                                    <StringItem index="7" value="Juegos de computadora"/>
-                                    <StringItem index="8" value="Juegos de azar"/>
-                                    <StringItem index="9" value="Ninguno de los anteriores"/>
+                                  <StringArray count="11">
+                                    <StringItem index="0" value="N/R"/>
+                                    <StringItem index="1" value="Practica deportes"/>
+                                    <StringItem index="2" value="Lectura"/>
+                                    <StringItem index="3" value="Monta&#xf1;ismo"/>
+                                    <StringItem index="4" value="Gimnasio"/>
+                                    <StringItem index="5" value="Fiestas"/>
+                                    <StringItem index="6" value="Baile"/>
+                                    <StringItem index="7" value="Televisi&#xf3;n"/>
+                                    <StringItem index="8" value="Juegos de computadora"/>
+                                    <StringItem index="9" value="Juegos de azar"/>
+                                    <StringItem index="10" value="Ninguno de los anteriores"/>
                                   </StringArray>
                                 </Property>
                               </Properties>
@@ -2076,23 +2080,24 @@
                                 </Constraint>
                               </Constraints>
                             </Component>
-                            <Component class="javax.swing.JComboBox" name="jComboBox4">
+                            <Component class="javax.swing.JComboBox" name="jSexualidad">
                               <Properties>
                                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                                   <Font name="Tahoma" size="10" style="0"/>
                                 </Property>
                                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                                  <StringArray count="10">
-                                    <StringItem index="0" value="Satisfactoria"/>
-                                    <StringItem index="1" value="Insatisfactoria"/>
-                                    <StringItem index="2" value="Dispaurenia/relaci&#xf3;n dolorosa"/>
-                                    <StringItem index="3" value="Inapetencia/frigidez"/>
-                                    <StringItem index="4" value="Urgencia sexual/ninfomania"/>
-                                    <StringItem index="5" value="Abstinencia voluntaria"/>
-                                    <StringItem index="6" value="Bisexualidad"/>
-                                    <StringItem index="7" value="Homosexualidad"/>
-                                    <StringItem index="8" value="Impotencia"/>
-                                    <StringItem index="9" value="Eyaculaci&#xf3;n precoz"/>
+                                  <StringArray count="11">
+                                    <StringItem index="0" value="N/R"/>
+                                    <StringItem index="1" value="Satisfactoria"/>
+                                    <StringItem index="2" value="Insatisfactoria"/>
+                                    <StringItem index="3" value="Dispaurenia/relaci&#xf3;n dolorosa"/>
+                                    <StringItem index="4" value="Inapetencia/frigidez"/>
+                                    <StringItem index="5" value="Urgencia sexual/ninfomania"/>
+                                    <StringItem index="6" value="Abstinencia voluntaria"/>
+                                    <StringItem index="7" value="Bisexualidad"/>
+                                    <StringItem index="8" value="Homosexualidad"/>
+                                    <StringItem index="9" value="Impotencia"/>
+                                    <StringItem index="10" value="Eyaculaci&#xf3;n precoz"/>
                                   </StringArray>
                                 </Property>
                               </Properties>
@@ -2135,18 +2140,19 @@
                                 </Constraint>
                               </Constraints>
                             </Component>
-                            <Component class="javax.swing.JComboBox" name="jComboBox7">
+                            <Component class="javax.swing.JComboBox" name="jActividadF">
                               <Properties>
                                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                                   <Font name="Tahoma" size="10" style="0"/>
                                 </Property>
                                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                                  <StringArray count="5">
-                                    <StringItem index="0" value="Sedentario"/>
-                                    <StringItem index="1" value="Aer&#xf3;bicos"/>
-                                    <StringItem index="2" value="Anaer&#xf3;bicos  y aer&#xf3;bicos"/>
-                                    <StringItem index="3" value="Deportes"/>
-                                    <StringItem index="4" value="Aer&#xf3;bicos, anaer&#xf3;bicos y deportes"/>
+                                  <StringArray count="6">
+                                    <StringItem index="0" value="N/R"/>
+                                    <StringItem index="1" value="Sedentario"/>
+                                    <StringItem index="2" value="Aer&#xf3;bicos"/>
+                                    <StringItem index="3" value="Anaer&#xf3;bicos  y aer&#xf3;bicos"/>
+                                    <StringItem index="4" value="Deportes"/>
+                                    <StringItem index="5" value="Aer&#xf3;bicos, anaer&#xf3;bicos y deportes"/>
                                   </StringArray>
                                 </Property>
                               </Properties>
@@ -2159,21 +2165,22 @@
                                 </Constraint>
                               </Constraints>
                             </Component>
-                            <Component class="javax.swing.JComboBox" name="jComboBox8">
+                            <Component class="javax.swing.JComboBox" name="Fsemanal">
                               <Properties>
                                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                                   <Font name="Tahoma" size="10" style="0"/>
                                 </Property>
                                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                                  <StringArray count="8">
-                                    <StringItem index="0" value="Nunca"/>
-                                    <StringItem index="1" value="Una vez"/>
-                                    <StringItem index="2" value="Dos veces"/>
-                                    <StringItem index="3" value="Tres veces"/>
-                                    <StringItem index="4" value="Cuatro veces"/>
-                                    <StringItem index="5" value="Cinco veces"/>
-                                    <StringItem index="6" value="Seis veces"/>
-                                    <StringItem index="7" value="Diariamente"/>
+                                  <StringArray count="9">
+                                    <StringItem index="0" value="N/R"/>
+                                    <StringItem index="1" value="Nunca"/>
+                                    <StringItem index="2" value="Una vez"/>
+                                    <StringItem index="3" value="Dos veces"/>
+                                    <StringItem index="4" value="Tres veces"/>
+                                    <StringItem index="5" value="Cuatro veces"/>
+                                    <StringItem index="6" value="Cinco veces"/>
+                                    <StringItem index="7" value="Seis veces"/>
+                                    <StringItem index="8" value="Diariamente"/>
                                   </StringArray>
                                 </Property>
                               </Properties>
@@ -2186,17 +2193,18 @@
                                 </Constraint>
                               </Constraints>
                             </Component>
-                            <Component class="javax.swing.JComboBox" name="jComboBox9">
+                            <Component class="javax.swing.JComboBox" name="jSueno">
                               <Properties>
                                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                                   <Font name="Tahoma" size="10" style="0"/>
                                 </Property>
                                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                                  <StringArray count="4">
-                                    <StringItem index="0" value="Reparador"/>
-                                    <StringItem index="1" value="Interrumpido"/>
-                                    <StringItem index="2" value="Insomnio"/>
-                                    <StringItem index="3" value="Pesadillas"/>
+                                  <StringArray count="5">
+                                    <StringItem index="0" value="N/R"/>
+                                    <StringItem index="1" value="Reparador"/>
+                                    <StringItem index="2" value="Interrumpido"/>
+                                    <StringItem index="3" value="Insomnio"/>
+                                    <StringItem index="4" value="Pesadillas"/>
                                   </StringArray>
                                 </Property>
                               </Properties>
@@ -4090,8 +4098,8 @@
                       </Properties>
                       <Constraints>
                         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-                          <JTabbedPaneConstraints tabName="Laboratorio">
-                            <Property name="tabTitle" type="java.lang.String" value="Laboratorio"/>
+                          <JTabbedPaneConstraints tabName="Laboratorio |">
+                            <Property name="tabTitle" type="java.lang.String" value="Laboratorio |"/>
                           </JTabbedPaneConstraints>
                         </Constraint>
                       </Constraints>
@@ -4868,8 +4876,8 @@
                       </Properties>
                       <Constraints>
                         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-                          <JTabbedPaneConstraints tabName="Estudios">
-                            <Property name="tabTitle" type="java.lang.String" value="Estudios"/>
+                          <JTabbedPaneConstraints tabName="Estudios |">
+                            <Property name="tabTitle" type="java.lang.String" value="Estudios |"/>
                           </JTabbedPaneConstraints>
                         </Constraint>
                       </Constraints>
@@ -5311,6 +5319,198 @@
                         </Component>
                       </SubComponents>
                     </Container>
+                    <Container class="javax.swing.JPanel" name="jPanel4">
+                      <Properties>
+                        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                        </Property>
+                      </Properties>
+                      <Constraints>
+                        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
+                          <JTabbedPaneConstraints tabName="Complementario |">
+                            <Property name="tabTitle" type="java.lang.String" value="Complementario |"/>
+                          </JTabbedPaneConstraints>
+                        </Constraint>
+                      </Constraints>
+
+                      <Layout class="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout">
+                        <Property name="useNullLayout" type="boolean" value="false"/>
+                      </Layout>
+                      <SubComponents>
+                        <Component class="javax.swing.JTextField" name="jTextExamenAdic">
+                          <Properties>
+                            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                              <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
+                                <TitledBorder title="Examen">
+                                  <Border PropertyName="innerBorder" info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
+                                    <LineBorder/>
+                                  </Border>
+                                </TitledBorder>
+                              </Border>
+                            </Property>
+                          </Properties>
+                          <Constraints>
+                            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                              <AbsoluteConstraints x="20" y="30" width="760" height="40"/>
+                            </Constraint>
+                          </Constraints>
+                        </Component>
+                        <Container class="javax.swing.JScrollPane" name="jScrollPane31">
+                          <Properties>
+                            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                              <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                            </Property>
+                            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                              <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
+                                <TitledBorder title="Informe / Interpretaci&#xf3;n">
+                                  <Border PropertyName="innerBorder" info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
+                                    <LineBorder/>
+                                  </Border>
+                                </TitledBorder>
+                              </Border>
+                            </Property>
+                          </Properties>
+                          <AuxValues>
+                            <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+                          </AuxValues>
+                          <Constraints>
+                            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                              <AbsoluteConstraints x="20" y="80" width="760" height="150"/>
+                            </Constraint>
+                          </Constraints>
+
+                          <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+                          <SubComponents>
+                            <Component class="javax.swing.JTextArea" name="jTextObservAdic">
+                              <Properties>
+                                <Property name="columns" type="int" value="20"/>
+                                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                                  <Font name="Arial" size="11" style="0"/>
+                                </Property>
+                                <Property name="lineWrap" type="boolean" value="true"/>
+                                <Property name="rows" type="int" value="5"/>
+                              </Properties>
+                              <Events>
+                                <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jTextObservAdicMousePressed"/>
+                                <EventHandler event="mouseReleased" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jTextObservAdicMouseReleased"/>
+                                <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="jTextObservAdicKeyReleased"/>
+                                <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="jTextObservAdicKeyTyped"/>
+                              </Events>
+                            </Component>
+                          </SubComponents>
+                        </Container>
+                        <Component class="javax.swing.JButton" name="jButton21">
+                          <Properties>
+                            <Property name="text" type="java.lang.String" value="Agregar"/>
+                            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                              <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
+                                <LineBorder/>
+                              </Border>
+                            </Property>
+                            <Property name="contentAreaFilled" type="boolean" value="false"/>
+                          </Properties>
+                          <Events>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton21ActionPerformed"/>
+                          </Events>
+                          <Constraints>
+                            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                              <AbsoluteConstraints x="800" y="30" width="70" height="40"/>
+                            </Constraint>
+                          </Constraints>
+                        </Component>
+                        <Component class="javax.swing.JButton" name="jAdcModif">
+                          <Properties>
+                            <Property name="text" type="java.lang.String" value="Modificar"/>
+                            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                              <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
+                                <LineBorder/>
+                              </Border>
+                            </Property>
+                            <Property name="contentAreaFilled" type="boolean" value="false"/>
+                            <Property name="enabled" type="boolean" value="false"/>
+                          </Properties>
+                          <Events>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jAdcModifActionPerformed"/>
+                          </Events>
+                          <Constraints>
+                            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                              <AbsoluteConstraints x="800" y="80" width="70" height="40"/>
+                            </Constraint>
+                          </Constraints>
+                        </Component>
+                        <Component class="javax.swing.JButton" name="jAdcDelete">
+                          <Properties>
+                            <Property name="text" type="java.lang.String" value="Retirar"/>
+                            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                              <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
+                                <LineBorder/>
+                              </Border>
+                            </Property>
+                            <Property name="contentAreaFilled" type="boolean" value="false"/>
+                            <Property name="enabled" type="boolean" value="false"/>
+                          </Properties>
+                          <Events>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jAdcDeleteActionPerformed"/>
+                          </Events>
+                          <Constraints>
+                            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                              <AbsoluteConstraints x="800" y="130" width="70" height="40"/>
+                            </Constraint>
+                          </Constraints>
+                        </Component>
+                        <Component class="javax.swing.JButton" name="jButton18">
+                          <Properties>
+                            <Property name="text" type="java.lang.String" value="Cancelar"/>
+                            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                              <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
+                                <LineBorder/>
+                              </Border>
+                            </Property>
+                            <Property name="contentAreaFilled" type="boolean" value="false"/>
+                          </Properties>
+                          <Events>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton18ActionPerformed"/>
+                          </Events>
+                          <Constraints>
+                            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                              <AbsoluteConstraints x="800" y="180" width="70" height="40"/>
+                            </Constraint>
+                          </Constraints>
+                        </Component>
+                        <Container class="javax.swing.JScrollPane" name="jScrollPane25">
+                          <AuxValues>
+                            <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+                          </AuxValues>
+                          <Constraints>
+                            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                              <AbsoluteConstraints x="20" y="250" width="860" height="310"/>
+                            </Constraint>
+                          </Constraints>
+
+                          <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+                          <SubComponents>
+                            <Component class="javax.swing.JTable" name="jTableAdic">
+                              <Properties>
+                                <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
+                                  <Table columnCount="3" rowCount="0">
+                                    <Column editable="true" title="ID" type="java.lang.Object"/>
+                                    <Column editable="true" title="Examen" type="java.lang.Object"/>
+                                    <Column editable="true" title="Descripci&#xf3;n" type="java.lang.Object"/>
+                                  </Table>
+                                </Property>
+                                <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
+                                  <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
+                                </Property>
+                              </Properties>
+                              <Events>
+                                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jTableAdicMouseClicked"/>
+                                <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jTableAdicMouseEntered"/>
+                              </Events>
+                            </Component>
+                          </SubComponents>
+                        </Container>
+                      </SubComponents>
+                    </Container>
                     <Container class="javax.swing.JPanel" name="jPanel10">
                       <Properties>
                         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -5349,28 +5549,29 @@
                             </Constraint>
                           </Constraints>
                         </Component>
-                        <Component class="javax.swing.JComboBox" name="jComboBox2">
+                        <Component class="javax.swing.JComboBox" name="jConclusion">
                           <Properties>
                             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                              <StringArray count="18">
-                                <StringItem index="0" value="Buenas condiciones de salud"/>
-                                <StringItem index="1" value="Buenas condiciones de salud con recomendaciones m&#xe9;dicas"/>
-                                <StringItem index="2" value="Elegible con recomenciones / restricciones"/>
-                                <StringItem index="3" value="Elegible con recomendaciones m&#xe9;dicas"/>
-                                <StringItem index="4" value="Elegible para el cargo propuesto"/>
-                                <StringItem index="5" value="Se encuentra en buenas condiciones de salud para su egreso"/>
-                                <StringItem index="6" value="Espera por resultados de examenes paracl&#xed;nicos"/>
-                                <StringItem index="7" value="No elegible para el cargo propuesto"/>
-                                <StringItem index="8" value="No se encuentra en buenas condiciones de salud"/>
-                                <StringItem index="9" value="Se encuentra en buenas condiciones de salud para el reintegro"/>
-                                <StringItem index="10" value="Reintegro con recomendaciones / restricciones m&#xe9;dicas"/>
-                                <StringItem index="11" value="Diferido"/>
-                                <StringItem index="12" value="Sano sin h&#xe1;bitos"/>
-                                <StringItem index="13" value="Sano con h&#xe1;bitos"/>
-                                <StringItem index="14" value="En riesgo"/>
-                                <StringItem index="15" value="Enfermo erradicable"/>
-                                <StringItem index="16" value="Enfermo controlable"/>
-                                <StringItem index="17" value="Con secuelas"/>
+                              <StringArray count="19">
+                                <StringItem index="0" value="Seleccionar"/>
+                                <StringItem index="1" value="Buenas condiciones de salud"/>
+                                <StringItem index="2" value="Buenas condiciones de salud con recomendaciones m&#xe9;dicas"/>
+                                <StringItem index="3" value="Elegible con recomenciones / restricciones"/>
+                                <StringItem index="4" value="Elegible con recomendaciones m&#xe9;dicas"/>
+                                <StringItem index="5" value="Elegible para el cargo propuesto"/>
+                                <StringItem index="6" value="Se encuentra en buenas condiciones de salud para su egreso"/>
+                                <StringItem index="7" value="Espera por resultados de examenes paracl&#xed;nicos"/>
+                                <StringItem index="8" value="No elegible para el cargo propuesto"/>
+                                <StringItem index="9" value="No se encuentra en buenas condiciones de salud"/>
+                                <StringItem index="10" value="Se encuentra en buenas condiciones de salud para el reintegro"/>
+                                <StringItem index="11" value="Reintegro con recomendaciones / restricciones m&#xe9;dicas"/>
+                                <StringItem index="12" value="Diferido"/>
+                                <StringItem index="13" value="Sano sin h&#xe1;bitos"/>
+                                <StringItem index="14" value="Sano con h&#xe1;bitos"/>
+                                <StringItem index="15" value="En riesgo"/>
+                                <StringItem index="16" value="Enfermo erradicable"/>
+                                <StringItem index="17" value="Enfermo controlable"/>
+                                <StringItem index="18" value="Con secuelas"/>
                               </StringArray>
                             </Property>
                             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
@@ -5501,6 +5702,25 @@
                             </Constraint>
                           </Constraints>
                         </Component>
+                        <Component class="javax.swing.JButton" name="BtnGuardar1">
+                          <Properties>
+                            <Property name="text" type="java.lang.String" value="Vista Previa"/>
+                            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                              <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
+                                <LineBorder/>
+                              </Border>
+                            </Property>
+                            <Property name="contentAreaFilled" type="boolean" value="false"/>
+                          </Properties>
+                          <Events>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BtnGuardar1ActionPerformed"/>
+                          </Events>
+                          <Constraints>
+                            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                              <AbsoluteConstraints x="430" y="530" width="140" height="40"/>
+                            </Constraint>
+                          </Constraints>
+                        </Component>
                       </SubComponents>
                     </Container>
                   </SubComponents>
@@ -5611,7 +5831,7 @@
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="10" y="10" width="330" height="110"/>
+              <AbsoluteConstraints x="10" y="20" width="330" height="100"/>
             </Constraint>
           </Constraints>
 
@@ -5651,7 +5871,7 @@
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Arial Narrow" size="18" style="1"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="             B U S C A R   P A C I E N T E"/>
+                <Property name="text" type="java.lang.String" value="             B U S C A R        P A C I E N T E"/>
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -5688,7 +5908,7 @@
               </AuxValues>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="10" y="40" width="210" height="50"/>
+                  <AbsoluteConstraints x="10" y="40" width="220" height="50"/>
                 </Constraint>
               </Constraints>
             </Component>
@@ -5748,7 +5968,7 @@
                   </Properties>
                   <Constraints>
                     <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                      <AbsoluteConstraints x="0" y="10" width="330" height="20"/>
+                      <AbsoluteConstraints x="0" y="0" width="330" height="30"/>
                     </Constraint>
                   </Constraints>
                 </Component>
@@ -5805,33 +6025,6 @@
                       <Constraints>
                         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
                           <AbsoluteConstraints x="10" y="20" width="150" height="50"/>
-                        </Constraint>
-                      </Constraints>
-                    </Component>
-                    <Component class="javax.swing.JTextField" name="TXTPcorreo">
-                      <Properties>
-                        <Property name="editable" type="boolean" value="false"/>
-                        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-                          <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
-                            <TitledBorder title="Correo">
-                              <Border PropertyName="innerBorder" info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
-                                <TitledBorder>
-                                  <Border PropertyName="innerBorder" info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
-                                    <LineBorder/>
-                                  </Border>
-                                </TitledBorder>
-                              </Border>
-                            </TitledBorder>
-                          </Border>
-                        </Property>
-                        <Property name="opaque" type="boolean" value="false"/>
-                      </Properties>
-                      <Events>
-                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="TXTPcorreoActionPerformed"/>
-                      </Events>
-                      <Constraints>
-                        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                          <AbsoluteConstraints x="10" y="70" width="150" height="50"/>
                         </Constraint>
                       </Constraints>
                     </Component>
@@ -6064,6 +6257,33 @@
                       <Constraints>
                         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
                           <AbsoluteConstraints x="0" y="400" width="320" height="20"/>
+                        </Constraint>
+                      </Constraints>
+                    </Component>
+                    <Component class="javax.swing.JTextField" name="TXTPcorreo">
+                      <Properties>
+                        <Property name="editable" type="boolean" value="false"/>
+                        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                          <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
+                            <TitledBorder>
+                              <Border PropertyName="innerBorder" info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
+                                <TitledBorder title="Correo">
+                                  <Border PropertyName="innerBorder" info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
+                                    <LineBorder/>
+                                  </Border>
+                                </TitledBorder>
+                              </Border>
+                            </TitledBorder>
+                          </Border>
+                        </Property>
+                        <Property name="opaque" type="boolean" value="false"/>
+                      </Properties>
+                      <Events>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="TXTPcorreoActionPerformed"/>
+                      </Events>
+                      <Constraints>
+                        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                          <AbsoluteConstraints x="10" y="70" width="150" height="50"/>
                         </Constraint>
                       </Constraints>
                     </Component>
