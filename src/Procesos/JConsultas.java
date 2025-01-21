@@ -80,7 +80,6 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import javax.activation.DataHandler;
 import javax.activation.FileDataSource;
-
 import javax.mail.BodyPart;
 import javax.mail.Message;
 import javax.mail.Session;
@@ -139,8 +138,7 @@ public class JConsultas extends javax.swing.JInternalFrame {
         jRadioAF.setSelected(true);
         jRadioAPP.setSelected(false);
      
-        BtnAexamen.setVisible(false);
-        BtnMexamen.setVisible(false);
+
       
     }
 
@@ -352,8 +350,6 @@ public class JConsultas extends javax.swing.JInternalFrame {
         TXTaspecto = new javax.swing.JTextField();
         TXTabdominal = new javax.swing.JTextField();
         TXTcadera = new javax.swing.JTextField();
-        BtnAexamen = new javax.swing.JButton();
-        BtnMexamen = new javax.swing.JButton();
         Electro = new javax.swing.JPanel();
         TXTVentricular = new javax.swing.JTextField();
         TXTSupraventricular = new javax.swing.JTextField();
@@ -468,7 +464,7 @@ public class JConsultas extends javax.swing.JInternalFrame {
         jTextConclusion = new javax.swing.JTextArea();
         BtnGuardar = new javax.swing.JButton();
         BtnImprimirHistoria2 = new javax.swing.JButton();
-        BtnGuardar1 = new javax.swing.JButton();
+        BtnVistaPrevia = new javax.swing.JButton();
         JPanelAnteriores = new javax.swing.JPanel();
         jScrollPane6 = new javax.swing.JScrollPane();
         jTableVisualizarC = new javax.swing.JTable();
@@ -516,7 +512,7 @@ public class JConsultas extends javax.swing.JInternalFrame {
         jPanel3.setBackground(new java.awt.Color(0, 0, 51));
         jPanel3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 650, 1290, 30));
+        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 660, 1290, 20));
 
         FechaAsignar1.setBackground(new java.awt.Color(255, 255, 255));
         FechaAsignar1.setToolTipText("");
@@ -578,6 +574,17 @@ public class JConsultas extends javax.swing.JInternalFrame {
         jTextMotivoConsulta.setLineWrap(true);
         jTextMotivoConsulta.setRows(5);
         jTextMotivoConsulta.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1), "Motivo de Consulta | Enfermedad Actual"));
+        jTextMotivoConsulta.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTextMotivoConsultaMouseClicked(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                jTextMotivoConsultaMousePressed(evt);
+            }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                jTextMotivoConsultaMouseReleased(evt);
+            }
+        });
         jScrollPane4.setViewportView(jTextMotivoConsulta);
 
         jPanel14.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 920, 160));
@@ -622,6 +629,11 @@ public class JConsultas extends javax.swing.JInternalFrame {
         JtextAntc1.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
         JtextAntc1.setLineWrap(true);
         JtextAntc1.setRows(5);
+        JtextAntc1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                JtextAntc1MouseClicked(evt);
+            }
+        });
         jScrollPane21.setViewportView(JtextAntc1);
 
         jPanel11.add(jScrollPane21, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 50, 330, 170));
@@ -700,6 +712,14 @@ public class JConsultas extends javax.swing.JInternalFrame {
         jTextAntPersonales.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
         jTextAntPersonales.setLineWrap(true);
         jTextAntPersonales.setRows(5);
+        jTextAntPersonales.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTextAntPersonalesMouseClicked(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                jTextAntPersonalesMousePressed(evt);
+            }
+        });
         jScrollPane19.setViewportView(jTextAntPersonales);
 
         jPanel12.add(jScrollPane19, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 50, 330, 170));
@@ -1309,6 +1329,11 @@ public class JConsultas extends javax.swing.JInternalFrame {
         jTConsumoDrugs.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
         jTConsumoDrugs.setLineWrap(true);
         jTConsumoDrugs.setRows(5);
+        jTConsumoDrugs.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTConsumoDrugsMouseClicked(evt);
+            }
+        });
         jScrollPane9.setViewportView(jTConsumoDrugs);
 
         jPanel16.add(jScrollPane9, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 20, 230, 90));
@@ -1348,6 +1373,11 @@ public class JConsultas extends javax.swing.JInternalFrame {
         jTConsumoAlcohol.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
         jTConsumoAlcohol.setLineWrap(true);
         jTConsumoAlcohol.setRows(5);
+        jTConsumoAlcohol.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTConsumoAlcoholMouseClicked(evt);
+            }
+        });
         jScrollPane15.setViewportView(jTConsumoAlcohol);
 
         jPanel16.add(jScrollPane15, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 20, 230, 90));
@@ -1356,6 +1386,11 @@ public class JConsultas extends javax.swing.JInternalFrame {
         jTConsumoTabaco.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
         jTConsumoTabaco.setLineWrap(true);
         jTConsumoTabaco.setRows(5);
+        jTConsumoTabaco.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTConsumoTabacoMouseClicked(evt);
+            }
+        });
         jScrollPane16.setViewportView(jTConsumoTabaco);
 
         jPanel16.add(jScrollPane16, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 20, 230, 90));
@@ -1636,18 +1671,6 @@ public class JConsultas extends javax.swing.JInternalFrame {
         TXTcadera.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "Cadera (cm)"));
         jPanel8.add(TXTcadera, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 50, 130, 40));
 
-        BtnAexamen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImgBotones/agregar2.png"))); // NOI18N
-        BtnAexamen.setBorder(null);
-        BtnAexamen.setContentAreaFilled(false);
-        BtnAexamen.setEnabled(false);
-        jPanel8.add(BtnAexamen, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 430, 110, 30));
-
-        BtnMexamen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImgBotones/modificar.png"))); // NOI18N
-        BtnMexamen.setBorder(null);
-        BtnMexamen.setContentAreaFilled(false);
-        BtnMexamen.setEnabled(false);
-        jPanel8.add(BtnMexamen, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 470, 110, 30));
-
         jTabbedPane2.addTab("Examen Físico |", jPanel8);
 
         Electro.setBackground(new java.awt.Color(255, 255, 255));
@@ -1718,6 +1741,11 @@ public class JConsultas extends javax.swing.JInternalFrame {
         jTextTratatamiento.setLineWrap(true);
         jTextTratatamiento.setRows(5);
         jTextTratatamiento.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1), "TRATAMIENTO ADMINISTRADO AL INGRESO"));
+        jTextTratatamiento.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTextTratatamientoMouseClicked(evt);
+            }
+        });
         jScrollPane12.setViewportView(jTextTratatamiento);
 
         Electro.add(jScrollPane12, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 380, 450, 100));
@@ -1727,6 +1755,11 @@ public class JConsultas extends javax.swing.JInternalFrame {
         TXTterapeutico.setLineWrap(true);
         TXTterapeutico.setRows(5);
         TXTterapeutico.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1), "MANEJO DIAGNÓSTICO Y TERAPÉUTICO "));
+        TXTterapeutico.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                TXTterapeuticoMouseClicked(evt);
+            }
+        });
         jScrollPane13.setViewportView(TXTterapeutico);
 
         Electro.add(jScrollPane13, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 480, 450, 90));
@@ -1736,6 +1769,11 @@ public class JConsultas extends javax.swing.JInternalFrame {
         jTexttrombolitico.setLineWrap(true);
         jTexttrombolitico.setRows(5);
         jTexttrombolitico.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1), "ADMINISTRACIÓN DE TROMBOLITICO"));
+        jTexttrombolitico.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTexttromboliticoMouseClicked(evt);
+            }
+        });
         jScrollPane14.setViewportView(jTexttrombolitico);
 
         Electro.add(jScrollPane14, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 280, 430, 100));
@@ -1745,6 +1783,11 @@ public class JConsultas extends javax.swing.JInternalFrame {
         jTextIngreso.setLineWrap(true);
         jTextIngreso.setRows(5);
         jTextIngreso.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1), "DIAGNÓSTICO DE INGRESO"));
+        jTextIngreso.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTextIngresoMouseClicked(evt);
+            }
+        });
         jScrollPane20.setViewportView(jTextIngreso);
 
         Electro.add(jScrollPane20, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 280, 450, 100));
@@ -1754,6 +1797,11 @@ public class JConsultas extends javax.swing.JInternalFrame {
         jTextCriterios.setLineWrap(true);
         jTextCriterios.setRows(5);
         jTextCriterios.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1), "CRITERIOS DE REPERFUSIÓN"));
+        jTextCriterios.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTextCriteriosMouseClicked(evt);
+            }
+        });
         jScrollPane22.setViewportView(jTextCriterios);
 
         Electro.add(jScrollPane22, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 380, 430, 100));
@@ -1763,6 +1811,11 @@ public class JConsultas extends javax.swing.JInternalFrame {
         jTextManejo.setLineWrap(true);
         jTextManejo.setRows(5);
         jTextManejo.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1), "COMPLICACIONES DE LA TROMBOLISIS Y MANEJO DE LAS MISMAS"));
+        jTextManejo.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTextManejoMouseClicked(evt);
+            }
+        });
         jScrollPane23.setViewportView(jTextManejo);
 
         Electro.add(jScrollPane23, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 480, 430, -1));
@@ -2000,6 +2053,11 @@ public class JConsultas extends javax.swing.JInternalFrame {
         JtxtRayosx.setLineWrap(true);
         JtxtRayosx.setRows(5);
         JtxtRayosx.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1), "Rayos x de torax"));
+        JtxtRayosx.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                JtxtRayosxMouseClicked(evt);
+            }
+        });
         jScrollPane24.setViewportView(JtxtRayosx);
 
         Rayosx.add(jScrollPane24, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 710, 110));
@@ -2157,7 +2215,7 @@ public class JConsultas extends javax.swing.JInternalFrame {
         jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jTextExamenAdic.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "Examen"));
-        jPanel4.add(jTextExamenAdic, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, 760, 40));
+        jPanel4.add(jTextExamenAdic, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, 800, 40));
 
         jScrollPane31.setBackground(new java.awt.Color(255, 255, 255));
         jScrollPane31.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "Informe / Interpretación"));
@@ -2167,6 +2225,9 @@ public class JConsultas extends javax.swing.JInternalFrame {
         jTextObservAdic.setLineWrap(true);
         jTextObservAdic.setRows(5);
         jTextObservAdic.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTextObservAdicMouseClicked(evt);
+            }
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 jTextObservAdicMousePressed(evt);
             }
@@ -2184,7 +2245,7 @@ public class JConsultas extends javax.swing.JInternalFrame {
         });
         jScrollPane31.setViewportView(jTextObservAdic);
 
-        jPanel4.add(jScrollPane31, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, 760, 150));
+        jPanel4.add(jScrollPane31, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, 800, 150));
 
         jButton21.setText("Agregar");
         jButton21.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -2194,7 +2255,7 @@ public class JConsultas extends javax.swing.JInternalFrame {
                 jButton21ActionPerformed(evt);
             }
         });
-        jPanel4.add(jButton21, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 30, 70, 40));
+        jPanel4.add(jButton21, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 40, 70, 40));
 
         jAdcModif.setText("Modificar");
         jAdcModif.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -2205,7 +2266,7 @@ public class JConsultas extends javax.swing.JInternalFrame {
                 jAdcModifActionPerformed(evt);
             }
         });
-        jPanel4.add(jAdcModif, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 80, 70, 40));
+        jPanel4.add(jAdcModif, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 90, 70, 40));
 
         jAdcDelete.setText("Retirar");
         jAdcDelete.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -2216,7 +2277,7 @@ public class JConsultas extends javax.swing.JInternalFrame {
                 jAdcDeleteActionPerformed(evt);
             }
         });
-        jPanel4.add(jAdcDelete, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 130, 70, 40));
+        jPanel4.add(jAdcDelete, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 140, 70, 40));
 
         jButton18.setText("Cancelar");
         jButton18.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -2226,7 +2287,7 @@ public class JConsultas extends javax.swing.JInternalFrame {
                 jButton18ActionPerformed(evt);
             }
         });
-        jPanel4.add(jButton18, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 180, 70, 40));
+        jPanel4.add(jButton18, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 190, 70, 40));
 
         jTableAdic.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -2246,7 +2307,7 @@ public class JConsultas extends javax.swing.JInternalFrame {
         });
         jScrollPane25.setViewportView(jTableAdic);
 
-        jPanel4.add(jScrollPane25, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 250, 860, 310));
+        jPanel4.add(jScrollPane25, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 250, 880, 310));
 
         jTabbedPane2.addTab("Complementario |", jPanel4);
 
@@ -2274,6 +2335,11 @@ public class JConsultas extends javax.swing.JInternalFrame {
         jTextRecomendacion.setLineWrap(true);
         jTextRecomendacion.setRows(5);
         jTextRecomendacion.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1), "Recomendaciones"));
+        jTextRecomendacion.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTextRecomendacionMouseClicked(evt);
+            }
+        });
         jScrollPane5.setViewportView(jTextRecomendacion);
 
         jPanel10.add(jScrollPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 310, 850, 200));
@@ -2283,6 +2349,11 @@ public class JConsultas extends javax.swing.JInternalFrame {
         jTextConclusion.setLineWrap(true);
         jTextConclusion.setRows(5);
         jTextConclusion.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1), "Conclusión"));
+        jTextConclusion.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTextConclusionMouseClicked(evt);
+            }
+        });
         jScrollPane8.setViewportView(jTextConclusion);
 
         jPanel10.add(jScrollPane8, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 90, 850, 210));
@@ -2290,6 +2361,7 @@ public class JConsultas extends javax.swing.JInternalFrame {
         BtnGuardar.setText("Guardar");
         BtnGuardar.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         BtnGuardar.setContentAreaFilled(false);
+        BtnGuardar.setEnabled(false);
         BtnGuardar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BtnGuardarActionPerformed(evt);
@@ -2307,15 +2379,16 @@ public class JConsultas extends javax.swing.JInternalFrame {
         });
         jPanel10.add(BtnImprimirHistoria2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 520, 110, 40));
 
-        BtnGuardar1.setText("Vista Previa");
-        BtnGuardar1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        BtnGuardar1.setContentAreaFilled(false);
-        BtnGuardar1.addActionListener(new java.awt.event.ActionListener() {
+        BtnVistaPrevia.setText("Vista Previa");
+        BtnVistaPrevia.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        BtnVistaPrevia.setContentAreaFilled(false);
+        BtnVistaPrevia.setEnabled(false);
+        BtnVistaPrevia.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BtnGuardar1ActionPerformed(evt);
+                BtnVistaPreviaActionPerformed(evt);
             }
         });
-        jPanel10.add(BtnGuardar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 530, 140, 40));
+        jPanel10.add(BtnVistaPrevia, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 530, 140, 40));
 
         jTabbedPane2.addTab("Conclusión |", jPanel10);
 
@@ -2535,29 +2608,7 @@ public class JConsultas extends javax.swing.JInternalFrame {
     
     
     
-    private void FechaAsignar1FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_FechaAsignar1FocusLost
-     
   
-    }//GEN-LAST:event_FechaAsignar1FocusLost
-
-  
-    private void FechaAsignar1PropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_FechaAsignar1PropertyChange
-    String fechaActual = new SimpleDateFormat("yyyy-MM-dd").format(Fecha.getTime());  
-    String fechaNueva = new SimpleDateFormat("yyyy-MM-dd").format(FechaAsignar1.getDate());  
-  
-   if(!fechaActual.equals(fechaNueva)) {
-
-        
-        if (filaPaciente != -1) {
-        limpiarTVisualizar();
-        visualizar_PdfVO(jTableVisualizarC);
-        }
-
- 
-}
-
-    }//GEN-LAST:event_FechaAsignar1PropertyChange
-
 
     private void tabbedAntecedentesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tabbedAntecedentesMouseClicked
     /*
@@ -2574,7 +2625,15 @@ public class JConsultas extends javax.swing.JInternalFrame {
     private void BtnImprimirHistoriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnImprimirHistoriaActionPerformed
     
         
-      if(jTextMotivoConsulta.getText().equals("")){
+        
+       if(TXTPcedula.getText().equals("V-") || TXTPcedula.getText().equals("") )
+        {
+            JOptionPane.showMessageDialog(null, "DEBE ASIGNAR UN PACIENTE", "ASIGNAR", JOptionPane.ERROR_MESSAGE);
+            TXTPcedula.setText("V-");
+        }
+           
+        
+     else if(jTextMotivoConsulta.getText().equals("")){
       JOptionPane.showMessageDialog(this, "DEBE COMPLETAR EL CAMPO MOTIVO CONSULTA", "CAMPOS", 1);
       
       }  
@@ -2583,7 +2642,7 @@ public class JConsultas extends javax.swing.JInternalFrame {
       else if(estadoEstudio.equals("Pendiente")){
       
       
-      
+      JOptionPane.showMessageDialog(null, "GENERANDO REPORTE...", "REPORTE CONSULTA", 1);
       idAsignar=idCallestudios;
        pdfHistorias();
        guardarHistoria();
@@ -2595,7 +2654,7 @@ public class JConsultas extends javax.swing.JInternalFrame {
    
    
       BtnSearch.setEnabled(true);
-         JOptionPane.showMessageDialog(null, "GENERANDO REPORTE...", "REPORTE CONSULTA", 1);
+        
       }
       
       
@@ -2605,7 +2664,7 @@ public class JConsultas extends javax.swing.JInternalFrame {
    
        
        
-       
+       JOptionPane.showMessageDialog(null, "GENERANDO REPORTE...", "REPORTE CONSULTA", 1);
        pdfHistorias();
        guardarHistoria();
        ActualizarHistoriaBdpdf();
@@ -2615,6 +2674,7 @@ public class JConsultas extends javax.swing.JInternalFrame {
        limpiarTVisualizar();
        visualizar_PdfVOHistorias(jTableVisualizarC);
     
+     
      //BtnImprimirHistoria.setEnabled(false);
      BtnSearch.setEnabled(true);
       }
@@ -3108,9 +3168,14 @@ JButton boton;
     private void BtnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnGuardarActionPerformed
 
         
+               if(TXTPcedula.getText().equals("V-") || TXTPcedula.getText().equals("") )
+        {
+            JOptionPane.showMessageDialog(null, "DEBE ASIGNAR UN PACIENTE", "ASIGNAR", JOptionPane.ERROR_MESSAGE);
+            TXTPcedula.setText("V-");
+        }
+         
         
-        
-       if(estadoEstudio.equals("Pendiente")){
+               else  if(estadoEstudio.equals("Pendiente")){
       
       
       
@@ -3184,7 +3249,9 @@ JButton boton;
             "Cancelar historia", JOptionPane.YES_NO_OPTION) == JOptionPane.YES_OPTION)  {
 
         cleanHistorias();
-        BtnImprimirHistoria.setEnabled(false); 
+        BtnImprimirHistoria.setEnabled(false);
+        BtnGuardar.setEnabled(false);
+        BtnVistaPrevia.setEnabled(false);
         estadoEstudio="";
 
 
@@ -3266,7 +3333,10 @@ JButton boton;
                     AuditoriaAgregar();
                     Callpacient();
                     BtnAgregar.setEnabled(false);
+
                     BtnImprimirHistoria.setEnabled(true);
+                    BtnGuardar.setEnabled(true);
+                    BtnVistaPrevia.setEnabled(true);
                     //      TxtMotivo.setEnabled(true);
               
 
@@ -3302,7 +3372,7 @@ JButton boton;
             
             Callpacient();
             cleanHistorias();
-            BtnSearch.setEnabled(false);
+ 
           
 
         }
@@ -3320,7 +3390,8 @@ JButton boton;
             }
             else
             {
-                Callpacient();
+                 Callpacient();
+            cleanHistorias();
 
             }
 
@@ -3726,9 +3797,19 @@ cantidad=cantidad-1;
         jTextAntPersonales.setText("");
     }//GEN-LAST:event_jButton27ActionPerformed
 
-    private void BtnGuardar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnGuardar1ActionPerformed
-       pdfHistorias();
-    }//GEN-LAST:event_BtnGuardar1ActionPerformed
+    private void BtnVistaPreviaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnVistaPreviaActionPerformed
+      
+           if(TXTPcedula.getText().equals("V-") || TXTPcedula.getText().equals("") )
+        {
+            JOptionPane.showMessageDialog(null, "DEBE ASIGNAR UN PACIENTE", "ASIGNAR", JOptionPane.ERROR_MESSAGE);
+            TXTPcedula.setText("V-");
+        }else{
+            pdfHistorias();
+           }
+        
+        
+       
+    }//GEN-LAST:event_BtnVistaPreviaActionPerformed
 
     private void jTextObservAdicMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTextObservAdicMousePressed
         checkPopup(evt, jTextObservAdic);
@@ -3762,12 +3843,22 @@ cantidad=cantidad-1;
         Object value_to_find= jTextExamenAdic.getText();
         boolean exist = Arrays.asList(content).contains(value_to_find);
 
+        
+        
+        
+        
         if (exist){
             JOptionPane.showMessageDialog(null, "NO PUEDEN HABER ENFERMEDADES DUPLICADAS", "INFORMACIÓN", JOptionPane.ERROR_MESSAGE);
         }
 
         else if (jTextExamenAdic.getText().equals("") || jTextObservAdic.getText().equals("") ){ JOptionPane.showMessageDialog(null, "DEBE COMPLETAR LOS CAMPOS", "INFORMACIÓN", JOptionPane.ERROR_MESSAGE);}
-
+      
+        else if(TXTPcedula.getText().equals("V-") || TXTPcedula.getText().equals("") )
+        {
+            JOptionPane.showMessageDialog(null, "DEBE ASIGNAR UN PACIENTE", "ASIGNAR", JOptionPane.ERROR_MESSAGE);
+            TXTPcedula.setText("V-");
+        }
+         
      
         else
         {
@@ -3882,6 +3973,100 @@ cantidad=cantidad-1;
     private void TXTPcorreoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TXTPcorreoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_TXTPcorreoActionPerformed
+
+    private void FechaAsignar1PropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_FechaAsignar1PropertyChange
+        String fechaActual = new SimpleDateFormat("yyyy-MM-dd").format(Fecha.getTime());
+        String fechaNueva = new SimpleDateFormat("yyyy-MM-dd").format(FechaAsignar1.getDate());
+
+        if(!fechaActual.equals(fechaNueva)) {
+
+            if (filaPaciente != -1) {
+                limpiarTVisualizar();
+                visualizar_PdfVO(jTableVisualizarC);
+            }
+
+        }
+    }//GEN-LAST:event_FechaAsignar1PropertyChange
+
+    private void FechaAsignar1FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_FechaAsignar1FocusLost
+
+    }//GEN-LAST:event_FechaAsignar1FocusLost
+
+    private void jTextMotivoConsultaMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTextMotivoConsultaMousePressed
+        checkPopup(evt, jTextMotivoConsulta);
+    }//GEN-LAST:event_jTextMotivoConsultaMousePressed
+
+    private void jTextMotivoConsultaMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTextMotivoConsultaMouseReleased
+      checkPopup(evt, jTextMotivoConsulta);
+    }//GEN-LAST:event_jTextMotivoConsultaMouseReleased
+
+    private void jTextMotivoConsultaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTextMotivoConsultaMouseClicked
+      checkPopup(evt, jTextMotivoConsulta);
+    }//GEN-LAST:event_jTextMotivoConsultaMouseClicked
+
+    private void JtextAntc1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JtextAntc1MouseClicked
+          checkPopup(evt, JtextAntc1);
+    }//GEN-LAST:event_JtextAntc1MouseClicked
+
+    private void jTextAntPersonalesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTextAntPersonalesMouseClicked
+       checkPopup(evt, jTextAntPersonales);
+    }//GEN-LAST:event_jTextAntPersonalesMouseClicked
+
+    private void jTextAntPersonalesMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTextAntPersonalesMousePressed
+ checkPopup(evt, jTextAntPersonales);        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextAntPersonalesMousePressed
+
+    private void jTConsumoAlcoholMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTConsumoAlcoholMouseClicked
+     checkPopup(evt, jTConsumoAlcohol);
+    }//GEN-LAST:event_jTConsumoAlcoholMouseClicked
+
+    private void jTConsumoTabacoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTConsumoTabacoMouseClicked
+        checkPopup(evt, jTConsumoTabaco);
+    }//GEN-LAST:event_jTConsumoTabacoMouseClicked
+
+    private void jTConsumoDrugsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTConsumoDrugsMouseClicked
+          checkPopup(evt, jTConsumoDrugs);
+    }//GEN-LAST:event_jTConsumoDrugsMouseClicked
+
+    private void jTexttromboliticoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTexttromboliticoMouseClicked
+           checkPopup(evt, jTexttrombolitico);
+    }//GEN-LAST:event_jTexttromboliticoMouseClicked
+
+    private void jTextCriteriosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTextCriteriosMouseClicked
+       checkPopup(evt, jTextCriterios);
+    }//GEN-LAST:event_jTextCriteriosMouseClicked
+
+    private void jTextManejoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTextManejoMouseClicked
+        checkPopup(evt, jTextManejo);
+    }//GEN-LAST:event_jTextManejoMouseClicked
+
+    private void jTextIngresoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTextIngresoMouseClicked
+         checkPopup(evt, jTextIngreso);
+    }//GEN-LAST:event_jTextIngresoMouseClicked
+
+    private void jTextTratatamientoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTextTratatamientoMouseClicked
+        checkPopup(evt,jTextTratatamiento);
+    }//GEN-LAST:event_jTextTratatamientoMouseClicked
+
+    private void TXTterapeuticoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TXTterapeuticoMouseClicked
+        checkPopup(evt,TXTterapeutico);
+    }//GEN-LAST:event_TXTterapeuticoMouseClicked
+
+    private void JtxtRayosxMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JtxtRayosxMouseClicked
+       checkPopup(evt,JtxtRayosx);
+    }//GEN-LAST:event_JtxtRayosxMouseClicked
+
+    private void jTextObservAdicMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTextObservAdicMouseClicked
+      checkPopup(evt,jTextObservAdic);
+    }//GEN-LAST:event_jTextObservAdicMouseClicked
+
+    private void jTextConclusionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTextConclusionMouseClicked
+      checkPopup(evt,jTextConclusion);
+    }//GEN-LAST:event_jTextConclusionMouseClicked
+
+    private void jTextRecomendacionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTextRecomendacionMouseClicked
+        checkPopup(evt,jTextRecomendacion);
+    }//GEN-LAST:event_jTextRecomendacionMouseClicked
 
     
      
@@ -4704,19 +4889,19 @@ catch(Exception e){System.out.println("Error searchidpaciente"+e);}
             Antc1.setBackgroundColor(BaseColor.LIGHT_GRAY);
             Antc2.setBackgroundColor(BaseColor.LIGHT_GRAY);
   
-            TableProcedimiento.addCell(Antc1);
-            TableProcedimiento.addCell(Antc2);
+            TableAntc2.addCell(Antc1);
+            TableAntc2.addCell(Antc2);
       
             for (int i = 0; i < jTableAntpersonal.getRowCount(); i++) {
                
                 String Procedimiento = jTableAntpersonal.getValueAt(i, 1).toString();
                 String Observacion = jTableAntpersonal.getValueAt(i, 2).toString();
       
-                TableProcedimiento.setHorizontalAlignment(PdfPCell.ALIGN_JUSTIFIED);
+                TableAntc2.setHorizontalAlignment(PdfPCell.ALIGN_JUSTIFIED);
                 
                
-                TableProcedimiento.addCell(new Paragraph(Procedimiento,FontFactory.getFont("Arial",9,Font.NORMAL))); 
-                TableProcedimiento.addCell(new Paragraph(Observacion,FontFactory.getFont("Arial",9,Font.NORMAL))); 
+                TableAntc2.addCell(new Paragraph(Procedimiento,FontFactory.getFont("Arial",9,Font.NORMAL))); 
+                TableAntc2.addCell(new Paragraph(Observacion,FontFactory.getFont("Arial",9,Font.NORMAL))); 
                 
             }
             
@@ -6596,8 +6781,41 @@ catch(Exception e){System.out.println("Error searchidpaciente"+e);}
 
 
 
-           
-           
+            Font font = new Font(FontFamily.HELVETICA, 10, Font.NORMAL);
+            
+            PdfPTable TableEadd = new PdfPTable(2);
+            TableEadd.setWidthPercentage(100);
+            //TableProcedimiento.getDefaultCell().setBorder(0);
+            float[] Columnapro2 = new float[]{30f, 60f};
+            TableEadd.setWidths(Columnapro2);
+            TableEadd.setHorizontalAlignment(Element.ALIGN_CENTER);
+            PdfPCell Tableadd1 = new PdfPCell(new Phrase("Examen Complementario", font));
+            PdfPCell Tableadd2 = new PdfPCell(new Phrase("Observación", font));
+            Tableadd1.setHorizontalAlignment(PdfPCell.ALIGN_CENTER);
+            Tableadd2.setHorizontalAlignment(PdfPCell.ALIGN_CENTER);
+            Tableadd1.setBorder(0);
+            Tableadd2.setBorder(0);
+
+            Tableadd1.setBackgroundColor(BaseColor.LIGHT_GRAY);
+            Tableadd2.setBackgroundColor(BaseColor.LIGHT_GRAY);
+  
+            TableEadd.addCell(Tableadd1);
+            TableEadd.addCell(Tableadd2);
+      
+            for (int i = 0; i < jTableAdic.getRowCount(); i++) {
+               
+                String Procedimiento = jTableAdic.getValueAt(i, 1).toString();
+                String Observacion = jTableAdic.getValueAt(i, 2).toString();
+      
+                TableEadd.setHorizontalAlignment(PdfPCell.ALIGN_JUSTIFIED);
+                
+               
+                TableEadd.addCell(new Paragraph(Procedimiento,FontFactory.getFont("Arial",9,Font.NORMAL))); 
+                TableEadd.addCell(new Paragraph(Observacion,FontFactory.getFont("Arial",9,Font.NORMAL))); 
+                
+            }
+            
+
         
            
            
@@ -6646,14 +6864,20 @@ catch(Exception e){System.out.println("Error searchidpaciente"+e);}
             doc.add(TableProcedimiento);
             doc.add(TableAntc2);
             doc.add(saltolinea);
+            
+            System.out.println("entre aqui 1");
            }
+          
+           
            else if(ant1>0){
            doc.add(TableProcedimiento);
            doc.add(saltolinea);
+           System.out.println("entre aqui 2");
            }
            else if(ant2>0){
            doc.add(TableAntc2);
            doc.add(saltolinea);
+           System.out.println("entre aqui 3");
            }
       
            
@@ -6848,20 +7072,47 @@ catch(Exception e){System.out.println("Error searchidpaciente"+e);}
            
             
           // -----------------  RAYOS X 
-       //   if(!JtxtRayosx.getText().equals("")){
+          if(!JtxtRayosx.getText().equals("")){
           doc.add(Rayosx);
-          doc.add(saltolinea);
+          } 
+          
+          
+          if(!TxtiAuriculazquierda.getText().equals("") 
+             ||!TxtiAuriculazquierda.getText().equals("")
+             ||!TXTvalvulas.getText().equals("") 
+             ||!TXTauriculaderecha.getText().equals("") 
+             ||!TXTmitral.getText().equals("") 
+             ||!TXTventriculoizquierdo.getText().equals("") 
+             ||!TXTaortica.getText().equals("") 
+             ||!TXTventriculoderecho.getText().equals("") 
+             ||!TXTtricuspide.getText().equals("") 
+             ||!TXTcontractilidad.getText().equals("") 
+             ||!TXTpulmonar.getText().equals("") 
+             ||!TXTeyeccion.getText().equals("") 
+             ||!TXTpericardio.getText().equals("") 
+             ||!TXTsistolica.getText().equals("") 
+             ||!TXTotros.getText().equals("") 
+             ||!TXTpsap.getText().equals("") 
+                  
+                  ){
           doc.add(TableRayosx2);
           doc.add(saltolinea);
-         // } 
+          }
+          
             
             
             
             
-            
-            
-            
-            
+         
+               
+          //EXAMEN COMPLEMENTARIO
+          int rowtableadd =  jTableAdic.getRowCount();  
+          
+          if ( rowtableadd > 0) {
+          doc.add(TableEadd);
+          doc.add(saltolinea);
+          }
+           
             
          
             //- C O N C L U S I O N -
@@ -8305,7 +8556,7 @@ catch(Exception e){System.out.println("Error en mostrar electro "+e);}
     
    
         
-    Connection con;
+    Connection con=null;
     EnlaceBd cn = new EnlaceBd();
     PreparedStatement ps=null;
     ResultSet rs=null;
@@ -8350,7 +8601,7 @@ catch(Exception e){System.out.println("Error en mostrar electro "+e);}
     
    
         
-    Connection con;
+    Connection con=null;
     EnlaceBd cn = new EnlaceBd();
     PreparedStatement ps=null;
     ResultSet rs=null;
@@ -8394,52 +8645,41 @@ catch(Exception e){System.out.println("Error en mostrar electro "+e);}
     
     
   
-  public void insertarFisico(){
-    Connection con;
+public void insertarFisico() {
+    Connection con = null;
+    PreparedStatement ps = null;
     EnlaceBd cn = new EnlaceBd();
-    PreparedStatement ps=null;
-    ResultSet rs=null;
-              
-          try {
- 
-            String sql2 = "INSERT INTO examen_fgeneral (Id_Historia)  values(?) ";
-            
-            con = cn.getConnection();
-            ps = con.prepareStatement(sql2);
-            ps.setInt(1, idAsignar);
-            ps.executeUpdate();
-            
-        } catch (Exception e) {
-            System.out.println(e);
-         
-           }
 
-          
-           try {
- 
-            String sql2 = "INSERT INTO examen_fisico (Id_Historia)  values(?) ";
-            
-            con = cn.getConnection();
-            ps = con.prepareStatement(sql2);
-            ps.setInt(1, idAsignar);
-            ps.executeUpdate();
-            
-            
-            
-        } catch (Exception e) {
-            System.out.println("error en insertar fisico"+ e);
-         
-           }
-           
-                 finally {
-            try {
-                ps.close();
-                cn.desconectar();
-            } catch (Exception ex) { System.out.println(ex+"2"); }
-           
+    try {
+
+        con = cn.getConnection();
+
+        // Inserción en ambas tablas utilizando un método común
+        insertarEnTabla(con, "examen_fgeneral");
+        insertarEnTabla(con, "examen_fisico");
+
+    } catch (SQLException e) {
+        System.out.println("Error en insertarFisico: " + e.getMessage());
+        JOptionPane.showMessageDialog(null, "Error al insertar en la base de datos: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+    } finally {
+        // Cerrar recursos
+        try {
+            if (ps != null) ps.close();
+            if (con != null) cn.desconectar();
+        } catch (SQLException ex) {
+            System.out.println("Error al cerrar recursos: " + ex.getMessage());
+        }
     }
-  
-  }
+}
+
+// Método común para insertar en cualquier tabla
+private void insertarEnTabla(Connection con, String tabla) throws SQLException {
+    String sql = "INSERT INTO " + tabla + " (Id_Historia) VALUES (?)";
+    try (PreparedStatement ps = con.prepareStatement(sql)) {
+        ps.setInt(1, idAsignar);
+        ps.executeUpdate();
+    }
+}
   
   
     
@@ -8447,7 +8687,7 @@ catch(Exception e){System.out.println("Error en mostrar electro "+e);}
   
   
     public void insertarElectro(){
-    Connection con;
+    Connection con=null;
     EnlaceBd cn = new EnlaceBd();
     PreparedStatement ps=null;
     ResultSet rs=null;
@@ -8470,7 +8710,7 @@ catch(Exception e){System.out.println("Error en mostrar electro "+e);}
             try {
                 ps.close();
                 cn.desconectar();
-            } catch (Exception ex) { System.out.println(ex+"2"); }
+            } catch (Exception ex) { System.out.println(ex+"error en insertar electro"); }
            
     }
 
@@ -8479,7 +8719,7 @@ catch(Exception e){System.out.println("Error en mostrar electro "+e);}
   
   
     public void insertarFactor(){
-    Connection con;
+    Connection con=null;
     EnlaceBd cn = new EnlaceBd();
     PreparedStatement ps=null;
     ResultSet rs=null;
@@ -8502,7 +8742,7 @@ catch(Exception e){System.out.println("Error en mostrar electro "+e);}
             try {
                 ps.close();
                 cn.desconectar();
-            } catch (Exception ex) { System.out.println(ex+"2"); }
+            } catch (Exception ex) { System.out.println(ex+"error en insertar factor"); }
            
     }
 
@@ -8511,7 +8751,7 @@ catch(Exception e){System.out.println("Error en mostrar electro "+e);}
   
   
   public void insertarLab(){
-    Connection con;
+    Connection con=null;
     EnlaceBd cn = new EnlaceBd();
     PreparedStatement ps=null;
     ResultSet rs=null;
@@ -8534,7 +8774,7 @@ catch(Exception e){System.out.println("Error en mostrar electro "+e);}
             try {
                 ps.close();
                 cn.desconectar();
-            } catch (Exception ex) { System.out.println(ex+"2"); }
+            } catch (Exception ex) { System.out.println(ex+"error en insertar lab"); }
            
     }
 
@@ -8542,7 +8782,7 @@ catch(Exception e){System.out.println("Error en mostrar electro "+e);}
   
     public void insertarResivion(){
   
-    Connection con;
+    Connection con=null;
     EnlaceBd cn = new EnlaceBd();
     PreparedStatement ps=null;
     ResultSet rs=null;     
@@ -8567,7 +8807,7 @@ catch(Exception e){System.out.println("Error en mostrar electro "+e);}
             try {
                 ps.close();
                 cn.desconectar();
-            } catch (Exception ex) { System.out.println(ex+"2"); }
+            } catch (Exception ex) { System.out.println(ex+"error en insertar revision"); }
            
     }
 
@@ -8575,7 +8815,7 @@ catch(Exception e){System.out.println("Error en mostrar electro "+e);}
   
        public void insertarConclusion(){
   
-    Connection con;
+    Connection con=null;
     EnlaceBd cn = new EnlaceBd();
     PreparedStatement ps=null;
     ResultSet rs;     
@@ -8598,7 +8838,7 @@ catch(Exception e){System.out.println("Error en mostrar electro "+e);}
             try {
                 ps.close();
                 cn.desconectar();
-            } catch (Exception ex) { System.out.println(ex+"2"); }
+            } catch (Exception ex) { System.out.println(ex+"err en insertar conclusion"); }
            
     }
 
@@ -8629,7 +8869,7 @@ catch(Exception e){System.out.println("Error en mostrar electro "+e);}
             try {
                 ps.close();
                 cn.desconectar();
-            } catch (Exception ex) { System.out.println(ex+"2"); }
+            } catch (Exception ex) { System.out.println(ex+" err en insertar rayos"); }
            
     }
 
@@ -8640,10 +8880,10 @@ catch(Exception e){System.out.println("Error en mostrar electro "+e);}
   
   public void updateFisico(){
   
-    Connection con;
+    Connection con=null;
     EnlaceBd cn = new EnlaceBd();
     PreparedStatement ps=null;
-    ResultSet rs;
+    ResultSet rs=null;
     
     
     
@@ -8688,7 +8928,7 @@ catch(Exception e){System.out.println("Error en mostrar electro "+e);}
  
         } catch (Exception e) {
       
-            System.out.println("ERROR EN ACTUALIZAR EXAMEN FISICO");
+   
             System.out.println(e);
            // JOptionPane.showMessageDialog(null, e);
         }
@@ -8697,7 +8937,7 @@ catch(Exception e){System.out.println("Error en mostrar electro "+e);}
             try {
                 ps.close();
                 cn.desconectar();
-            } catch (Exception ex) { System.out.println(ex); }
+            } catch (Exception ex) { System.out.println("fisico "+ex); }
            
     }
   
@@ -8708,11 +8948,11 @@ catch(Exception e){System.out.println("Error en mostrar electro "+e);}
      public void updateGeneral(){
      
      
-    Connection con;
+    Connection con=null;
     EnlaceBd cn = new EnlaceBd();
     PreparedStatement ps=null;
     ResultSet rs=null;
-    
+   
 
           try {
               
@@ -8741,8 +8981,8 @@ catch(Exception e){System.out.println("Error en mostrar electro "+e);}
   
  
         } catch (Exception e) {
-            System.out.println("ERROR EN ACTUALIZAR EXAMEN FGENERAL");
-            System.out.println(e);
+       
+            System.out.println("ERROR EN ACTUALIZAR EXAMEN FGENERAL"+e);
           //  JOptionPane.showMessageDialog(null, e);
         }
      
@@ -8750,7 +8990,7 @@ catch(Exception e){System.out.println("Error en mostrar electro "+e);}
             try {
                 ps.close();
                 cn.desconectar();
-            } catch (Exception ex) { System.out.println(ex); }       
+            } catch (Exception ex) { System.out.println("general"+ex); }       
     }
      
      }
@@ -8761,7 +9001,7 @@ catch(Exception e){System.out.println("Error en mostrar electro "+e);}
        public void updateFactor(){
      
      
-    Connection con;
+    Connection con=null;
     EnlaceBd cn = new EnlaceBd();
     PreparedStatement ps=null;
     ResultSet rs=null;
@@ -8811,7 +9051,7 @@ String sql = "UPDATE `save_factoriesgo`\n" +
   
  
         } catch (Exception e) {
-            System.out.println("ERROR EN ACTUALIZAR FACTOR RIESGO");
+         
             System.out.println(e);
           //  JOptionPane.showMessageDialog(null, e);
         }
@@ -8820,7 +9060,7 @@ String sql = "UPDATE `save_factoriesgo`\n" +
             try {
                 ps.close();
                 cn.desconectar();
-            } catch (Exception ex) { System.out.println(ex); }       
+            } catch (Exception ex) { System.out.println("factor"+ex); }       
     }
      
      }
@@ -8831,7 +9071,7 @@ String sql = "UPDATE `save_factoriesgo`\n" +
      public void updateElectro(){
      
      
-    Connection con;
+    Connection con=null;
     EnlaceBd cn = new EnlaceBd();
     PreparedStatement ps=null;
     ResultSet rs=null;
@@ -8904,13 +9144,13 @@ String sql = "UPDATE `save_factoriesgo`\n" +
             
             ps.executeUpdate();
   
-            ps.close();
-        //  rs.close();
-            cn.desconectar();
+         
+      
+
             
  
         } catch (Exception e) {
-            System.out.println("ERROR EN ACTUALIZAR EXAMEN FGENERAL");
+        
             System.out.println(e);
           //  JOptionPane.showMessageDialog(null, e);
         }
@@ -8929,16 +9169,16 @@ String sql = "UPDATE `save_factoriesgo`\n" +
      
      
 
-       
+      /* 
   public void UpdateFGeneral(){                                             
     
       
    // SearchMaxIdConsulta();
       
-    Connection con;
+    Connection con=null;
     EnlaceBd cn = new EnlaceBd();
-    PreparedStatement ps;
-    ResultSet rs;
+    PreparedStatement ps=null;
+    ResultSet rs =null;
     
 
           try {
@@ -8970,7 +9210,7 @@ String sql = "UPDATE `save_factoriesgo`\n" +
             
  
         } catch (Exception e) {
-            System.out.println("ERROR EN ACTUALIZAR EXAMEN FGENERAL");
+      
             System.out.println(e);
             JOptionPane.showMessageDialog(null, e);
         }
@@ -9022,23 +9262,104 @@ String sql = "UPDATE `save_factoriesgo`\n" +
  
         } catch (Exception e) {
       
-            System.out.println("ERROR EN ACTUALIZAR EXAMEN FISICO");
+     
             System.out.println(e);
-            JOptionPane.showMessageDialog(null, e);
+
         }          
     } 
      
   
   
-  
+  */
+     
+     
+     public void UpdateFGeneral() {
+    Connection con = null;
+    EnlaceBd cn = new EnlaceBd();
+    PreparedStatement ps = null;
+
+    try {
+
+        con = cn.getConnection();
+
+        // Actualización de examen_fgeneral
+        String sql1 = "UPDATE examen_fgeneral SET Talla=?, Peso=?, Peso_ideal=?, Peso_Adic=?, IMC=?, Aspecto=?, Abdominal=?, Temperatura=?, Pulso=?, FR=?, Tipo_respiracion=?, Cadera=?, Tension=? WHERE Id_Historia=?";
+        ps = con.prepareStatement(sql1);
+        ps.setString(1, TXTtalla.getText());
+        ps.setString(2, TXTpeso.getText());
+        ps.setString(3, TXTpesoIdeal.getText());
+        ps.setString(4, TXTpesoAdic.getText());
+        ps.setString(5, TXTimc.getText());
+        ps.setString(6, TXTaspecto.getText());
+        ps.setString(7, TXTabdominal.getText());
+        ps.setString(8, TXTtemperatura.getText());
+        ps.setString(9, TXTpulso.getText());
+        ps.setString(10, TXTfr.getText());
+        ps.setString(11, TXTrespiracion.getText());
+        ps.setString(12, TXTcadera.getText());
+        ps.setString(13, TXTtension.getText());
+        ps.setInt(14, idAsignar);
+
+        ps.executeUpdate(); // Ejecutar primera actualización
+
+        // Actualización de examen_fisico
+        String sql2 = "UPDATE examen_fisico SET Piel=?, Ojos=?, Oidos=?, Dientes=?, Boca=?, Cuello=?, Corazon=?, Abdomen=?, Columna=?, ExtrInferior=?, Linfaticos=?, Genitales=?, Ano=?, Oftamoscopia=?, Nariz=?, Torax=?, Mamas=?, Pulmones=?, Hernias=?, ExtSuperior=?, Arterias=?, Venas=?, Neurologico=?, Prostata=?, Ginecologo=? WHERE Id_Historia=?";
+        ps = con.prepareStatement(sql2);
+        ps.setString(1, TXTpiel.getText());
+        ps.setString(2, TXTojos.getText());
+        ps.setString(3, TXToidos.getText());
+        ps.setString(4, TXTdientes.getText());
+        ps.setString(5, TXTboca.getText());
+        ps.setString(6, TXTcuello.getText());
+        ps.setString(7, TXTcorazon.getText());
+        ps.setString(8, TXTAbdomen2.getText());
+        ps.setString(9, TXTcolumna.getText());
+        ps.setString(10, TXTinferior.getText());
+        ps.setString(11, TXTlinfaticos.getText());
+        ps.setString(12, TXTgenitales.getText());
+        ps.setString(13, TXTrectal.getText());
+        ps.setString(14, TXToftamoscopia.getText());
+        ps.setString(15, TXTnariz.getText());
+        ps.setString(16, TXTtorax.getText());
+        ps.setString(17, TXTmamas.getText());
+        ps.setString(18, TXTpulmones.getText());
+        ps.setString(19, TXThernias.getText());
+        ps.setString(20, TXTsuperior.getText());
+        ps.setString(21, TXTarterias.getText());
+        ps.setString(22, TXTvenas.getText());
+        ps.setString(23, TXTneurologico.getText());
+        ps.setString(24, TXTprostata.getText());
+        ps.setString(25, TXTginecologo.getText());
+        ps.setInt(26, idAsignar);
+
+        ps.executeUpdate(); // Ejecutar segunda actualización
+
+    } catch (SQLException e) {
+        System.out.println("Error al actualizar: " + e.getMessage());
+        JOptionPane.showMessageDialog(null, "Error al actualizar los registros: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+    } finally {
+        // Cerrar los recursos en finally
+        try {
+            if (ps != null) {
+                ps.close();
+            }
+            if (con != null) {
+                cn.desconectar(); // Desconectar la base de datos
+            }
+        } catch (SQLException ex) {
+            System.out.println("Error al cerrar recursos: " + ex.getMessage());
+        }
+    }
+}
+
   
   
   
     
 public void updateRevision() {
-    Connection con;
+    Connection con=null;
     EnlaceBd cn = new EnlaceBd();
-    PreparedStatement ps;
+    PreparedStatement ps=null;
 
 
     int Menarquia = (int) jSpinner2.getValue();
@@ -9088,10 +9409,10 @@ public void updateRevision() {
   
  public void updatelab(){
   
-    Connection con;
+    Connection con=null;
     EnlaceBd cn = new EnlaceBd();
     PreparedStatement ps=null;
-    ResultSet rs;
+    ResultSet rs=null;
     
     
     
@@ -9189,8 +9510,8 @@ public void updateRevision() {
  
         } catch (Exception e) {
       
-            System.out.println("ERROR EN ACTUALIZAR LAB");
-            System.out.println(e);
+
+            System.out.println("ERROR EN ACTUALIZAR LAB"+e);
            // JOptionPane.showMessageDialog(null, e);
         }
             
@@ -9214,7 +9535,7 @@ public void updateRevision() {
      public void updateRayos(){
      
      
-    Connection con;
+    Connection con=null;
     EnlaceBd cn = new EnlaceBd();
     PreparedStatement ps=null;
     ResultSet rs=null;
@@ -9287,7 +9608,7 @@ public void updateRevision() {
 
 
     public void updateConclusion() {
-    Connection con;
+    Connection con=null;
     EnlaceBd cn = new EnlaceBd();
     PreparedStatement ps=null;
 
@@ -9307,8 +9628,7 @@ public void updateRevision() {
 
         ps.executeUpdate();
 
-        ps.close();
-        cn.desconectar();
+    
     } catch (Exception e) {
         System.out.println("ERROR EN ACTUALIZAR CONCLUSION: " + e);
     }
@@ -9317,7 +9637,7 @@ public void updateRevision() {
             try {
                 ps.close();
                 cn.desconectar();
-            } catch (Exception ex) { System.out.println(ex+"2"); }
+            } catch (Exception ex) { System.out.println(ex+"conclusion"); }
            
     }
 }
@@ -9560,8 +9880,8 @@ public void updateRevision() {
       limpiarTVisualizar();
       visualizar_PdfVOHistorias(jTableVisualizarC);
       BtnImprimirHistoria.setEnabled(true);
-      
-      
+      BtnGuardar.setEnabled(true);
+      BtnVistaPrevia.setEnabled(true);
       
       AsignarHistoriaPaciente();
       SearchLastHistory();
@@ -9595,7 +9915,7 @@ public void updateRevision() {
         
         
         
-             finally {
+           finally {
             try {
                 ps.close();
                 cn.desconectar();
@@ -9610,9 +9930,112 @@ public void updateRevision() {
     
     
     
+    /*
+    public void Callpacient() {
+    Connection con = null;
+    PreparedStatement ps = null;
+    ResultSet rs = null;
+    EnlaceBd cn = new EnlaceBd();
+    
+    String Cedula = TXTPcedula.getText().trim();  // Asegurarse de quitar espacios innecesarios
+
+    if (Cedula.isEmpty() || Cedula.equals("V-")) {
+        JOptionPane.showMessageDialog(null, "EL CAMPO CÉDULA NO PUEDE ESTAR VACIO Y DEBE LLEVAR V-", "CAMPO VACIO", JOptionPane.WARNING_MESSAGE);
+        return; // Salir de la función si la cédula no es válida
+    }
+
+    try {
+        
+        con = cn.getConnection();
+
+        // Consulta para obtener Idpaciente basado en la cédula
+        String query = "SELECT Idpaciente FROM table_paciente WHERE Cedula=?";
+        ps = con.prepareStatement(query);
+        ps.setString(1, Cedula);
+        rs = ps.executeQuery();
+
+        if (rs.next()) {
+            // Si el paciente existe, obtener los detalles
+            int IdPaciente = rs.getInt("Idpaciente");
+
+            String sql2 = "SELECT Nombre, Apellido, Cedula, Telefono, Correo, Direccion, Sexo, DATE_FORMAT(FechNacimiento, '%d/%m/%Y') AS Fecha " +
+                          "FROM table_paciente WHERE Idpaciente=?";
+            ps = con.prepareStatement(sql2);
+            ps.setInt(1, IdPaciente);
+            rs = ps.executeQuery();
+
+            if (rs.next()) {
+                // Asignar los datos del paciente a los campos
+                String nombre = rs.getString("Nombre");
+                String apellido = rs.getString("Apellido");
+                String cedula = rs.getString("Cedula");
+                String telefono = rs.getString("Telefono");
+                String correo = rs.getString("Correo");
+                String direccion = rs.getString("Direccion");
+                String sexo = rs.getString("Sexo");
+                String nacimiento = rs.getString("Fecha");
+
+                // Actualizar el género
+                if ("Femenino".equals(sexo)) {
+                    Sexo = "Femenino";
+                    JRfemenino.setSelected(true);
+                    JRMasculino.setSelected(false);
+                } else if ("Masculino".equals(sexo)) {
+                    Sexo = "Masculino";
+                    JRMasculino.setSelected(true);
+                    JRfemenino.setSelected(false);
+                }
+
+                // Llenar los campos de texto
+                TXTPnombre.setText(nombre);
+                TXTPapellido.setText(apellido);
+                TXTPcorreo.setText(correo);
+                TXTPtelefono.setText(telefono);
+                TXTPdireccion.setText(direccion);
+
+                // Establecer la fecha de nacimiento
+                SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
+                FechaNacimiento.setDate(formato.parse(nacimiento));
+
+                // Activar la vista de registro y los botones
+                JPregistro.setVisible(true);
+                DesactivarCampos();
+                limpiarTVisualizar();
+                visualizar_PdfVOHistorias(jTableVisualizarC);
+                BtnImprimirHistoria.setEnabled(true);
+                BtnGuardar.setEnabled(true);
+                BtnVistaPrevia.setEnabled(true);
+
+                AsignarHistoriaPaciente();
+                SearchLastHistory();
+            }
+        } else {
+            // Si no existe el paciente, preguntar si desea registrarlo
+            if (JOptionPane.showConfirmDialog(rootPane, "El paciente no se encuentra registrado. ¿Desea registrarlo?", "Registro Paciente", JOptionPane.YES_NO_OPTION) == JOptionPane.YES_OPTION) {
+                ActivarCampos();
+                limpiarCamposNoregistro();
+                JPregistro.setVisible(true);
+                BtnSearch.setEnabled(false);
+            } else {
+                BtnAgregar.setVisible(false);
+                BtnSearch.setEnabled(true);
+            }
+        }
+    } catch (Exception e) {
+        JOptionPane.showMessageDialog(null, "Error: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+    } finally {
+        try {
+            if (rs != null) rs.close();
+            if (ps != null) ps.close();
+            if (con != null) cn.desconectar();
+        } catch (Exception e) {
+            System.out.println("Error al cerrar recursos: " + e.getMessage());
+        }
+    }
+}
     
     
-       
+       */
        
    public void AsignarHistoriaPaciente(){
     
@@ -9714,92 +10137,87 @@ public void updateRevision() {
        
        
 
-    public void insertbdAntc1()
-    {
-  Connection con=null;
-   EnlaceBd cn = new EnlaceBd ();
-   PreparedStatement ps=null;
-   ResultSet rs=null; 
-     try {
-         
-         
-       
-         
-         
-            String sql = "INSERT INTO `table_antc1`(`Id_Hist`, `Antc1_Enfer`, `Antc1_Descrip`) VALUES (?,?,?)";
-            for (int i = 0; i < jTableAF2.getRowCount(); i++) {
+   public void insertbdAntc1() {
+    EnlaceBd cn = new EnlaceBd();
+    Connection con = null;
+    PreparedStatement ps = null;
 
-                con = cn.getConnection();
-                ps = con.prepareStatement(sql);
-                
-                ps.setInt(1,  idAsignar);
-                ps.setString(2, jTableAF2.getValueAt(i, 1).toString());
-                ps.setString(3, jTableAF2.getValueAt(i, 2).toString());
-   
-                ps.execute();
-  
-  
-            
-            }
+    try {
+        String sql = "INSERT INTO `table_antc1`(`Id_Hist`, `Antc1_Enfer`, `Antc1_Descrip`) VALUES (?,?,?)";
 
-        } catch (Exception e) {
-            System.out.println(e);
+        // Obtener la conexión una sola vez
+        con = cn.getConnection();
+
+        // Preparar la sentencia fuera del bucle para mejorar la eficiencia
+        ps = con.prepareStatement(sql);
+
+        // Iterar sobre las filas de la tabla
+        for (int i = 0; i < jTableAF2.getRowCount(); i++) {
+            ps.setInt(1, idAsignar); // Asignar Id_Hist
+            ps.setString(2, jTableAF2.getValueAt(i, 1).toString()); // Asignar Antc1_Enfer
+            ps.setString(3, jTableAF2.getValueAt(i, 2).toString()); // Asignar Antc1_Descrip
+
+            ps.addBatch(); // Agregar la sentencia al lote
         }
 
-              finally {
-            try {
-                ps.close();
-                cn.desconectar();
-            } catch (Exception ex) { System.out.println(ex+"2"); }
-           
-    }
-    
-    }
-    
-        
-        
-        
-          public void insertbdAntc2()
-    {
-  Connection con=null;
-   EnlaceBd cn = new EnlaceBd ();
-   PreparedStatement ps=null;
-   ResultSet rs=null; 
-     try {
-         
-       
-             
-         String sql = "INSERT INTO `table_antc2`(`Id_Hist`, `Antc1_Enfer`, `Antc1_Descrip`) VALUES (?,?,?)";
-            for (int i = 0; i < jTableAntpersonal.getRowCount(); i++) {
+        // Ejecutar el lote de inserciones
+        ps.executeBatch();
 
-                con = cn.getConnection();
-                ps = con.prepareStatement(sql);
-         
-                
-                
-                ps.setInt(1,  idAsignar);
-                ps.setString(2, jTableAntpersonal.getValueAt(i, 1).toString());
-                ps.setString(3, jTableAntpersonal.getValueAt(i, 2).toString());
-   
-                ps.execute();
-  
-  
-            
-            }
+    } catch (Exception e) {
+        System.out.println("Error al insertar registros: " + e.getMessage());
+    } finally {
+        // Cerrar recursos de manera segura
+        try {
+            if (ps != null) ps.close();
+            if (con != null) cn.desconectar();
+        } catch (Exception ex) {
+            System.out.println("Error al cerrar recursos: " + ex.getMessage());
+        }
+    }
+}
+    
+        
+        
+        
+      public void insertbdAntc2() {
+    Connection con = null;
+    PreparedStatement ps = null;
+     EnlaceBd cn = new EnlaceBd();
 
-        } catch (Exception e) {
-            System.out.println(e);
+    try {
+
+        con = cn.getConnection();
+
+        String sql = "INSERT INTO `table_antc2`(`Id_Hist`, `Antc1_Enfer`, `Antc1_Descrip`) VALUES (?,?,?)";
+
+        // Preparar la sentencia una sola vez
+        ps = con.prepareStatement(sql);
+
+        // Iterar sobre las filas de la tabla
+        for (int i = 0; i < jTableAntpersonal.getRowCount(); i++) {
+            ps.setInt(1, idAsignar); // Asignar Id_Hist
+            ps.setString(2, jTableAntpersonal.getValueAt(i, 1).toString()); // Asignar Antc1_Enfer
+            ps.setString(3, jTableAntpersonal.getValueAt(i, 2).toString()); // Asignar Antc1_Descrip
+
+            ps.addBatch(); // Agregar al lote
         }
 
-               finally {
-            try {
-                ps.close();
-                cn.desconectar();
-            } catch (Exception ex) { System.out.println(ex+"2"); }
-           
+        // Ejecutar el lote de inserciones
+        ps.executeBatch();
+
+    } catch (SQLException e) {
+        System.out.println("Error al insertar registros: " + e.getMessage());
+        JOptionPane.showMessageDialog(null, "Error al insertar los registros: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+    } finally {
+        // Cerrar los recursos de manera segura
+        try {
+            if (ps != null) ps.close();
+            if (con != null) cn.desconectar();
+        } catch (SQLException ex) {
+            System.out.println("Error al cerrar recursos: " + ex.getMessage());
+        }
     }
-    
-    }
+}
         
         
         
@@ -10129,6 +10547,7 @@ System.out.println(idantc1);
      jTextMotivoConsulta.setText("");
      limpiarTAntecedentesF3();
      limpiarTAntecedentesF2();
+     limpiarEAdc();
      JtextAntc1.setText("");
      jTextAntPersonales.setText("");
      jCheckConstitucional.setSelected(false);
@@ -10330,7 +10749,7 @@ System.out.println(idantc1);
      
 
      
-     
+     jTextObservAdic.setText("");
      jTextConclusion.setText("");
      jTextRecomendacion.setText("");
      jConclusion.setSelectedItem("Seleccionar");
@@ -10660,15 +11079,13 @@ System.out.println(idantc1);
   JCAntecedentesFamiliaresDao AntcDao = new JCAntecedentesFamiliaresDao ();
    
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton BtnAexamen;
     private javax.swing.JButton BtnAgregar;
     private javax.swing.JButton BtnCancelar;
     private javax.swing.JButton BtnGuardar;
-    private javax.swing.JButton BtnGuardar1;
     private javax.swing.JButton BtnImprimirHistoria;
     private javax.swing.JButton BtnImprimirHistoria2;
-    private javax.swing.JButton BtnMexamen;
     private javax.swing.JButton BtnSearch;
+    private javax.swing.JButton BtnVistaPrevia;
     private javax.swing.JPanel Electro;
     private javax.swing.JPanel FactorRiesgo;
     private javax.swing.JLabel FechaAc4;

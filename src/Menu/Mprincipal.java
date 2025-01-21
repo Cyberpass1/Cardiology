@@ -233,7 +233,7 @@ public void hora()
         FechaAc1.setFont(new java.awt.Font("Arial Narrow", 1, 70)); // NOI18N
         FechaAc1.setForeground(new java.awt.Color(255, 255, 255));
         FechaAc1.setText("¡BIENVENIDO!");
-        panelImage2.add(FechaAc1, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 500, -1, -1));
+        panelImage2.add(FechaAc1, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 530, -1, -1));
 
         jLabel102.setBackground(new java.awt.Color(0, 0, 0));
         jLabel102.setFont(new java.awt.Font("Arial Narrow", 1, 36)); // NOI18N
@@ -373,7 +373,7 @@ public void hora()
         });
         jPanel7.add(IDEspecialidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 110, 60, -1));
 
-        panelImage2.add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 30, 410, 560));
+        panelImage2.add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 50, 410, 560));
 
         jPanel3.add(panelImage2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1300, 660));
 

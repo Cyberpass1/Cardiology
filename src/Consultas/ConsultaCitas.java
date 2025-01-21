@@ -158,10 +158,10 @@ visualizar_PdfVOHistorias(jTableVisualizarC, fecha, fecha2 );
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 30, Short.MAX_VALUE)
+            .addGap(0, 40, Short.MAX_VALUE)
         );
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 643, 1300, 30));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 650, 1300, 40));
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
         jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -489,6 +489,11 @@ String correo="", cedpaciente="", estado="";
         consultas.limpiarShowAntc2();
         consultas.ShowAntc1(idtablaHistorias);
         consultas.ShowAntc2(idtablaHistorias);
+        
+        consultas.limpiarEAdc();     
+        consultas.ShowExamAdic(idtablaHistorias);
+        
+        
       }
       catch(Exception e){
       jTableVisualizarC.requestFocusInWindow();

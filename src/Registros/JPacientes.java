@@ -113,7 +113,7 @@ public class JPacientes extends javax.swing.JInternalFrame {
         FechaAdmin.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jPanel3.add(FechaAdmin, new org.netbeans.lib.awtextra.AbsoluteConstraints(1150, 20, 120, 30));
 
-        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 610, 1300, 70));
+        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 640, 1300, 40));
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
         jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -197,7 +197,7 @@ public class JPacientes extends javax.swing.JInternalFrame {
                 BtnAgregarActionPerformed(evt);
             }
         });
-        jPanel2.add(BtnAgregar, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 530, 100, 30));
+        jPanel2.add(BtnAgregar, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 560, 100, 30));
 
         BtnModificar.setText("Modificar");
         BtnModificar.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -208,7 +208,7 @@ public class JPacientes extends javax.swing.JInternalFrame {
                 BtnModificarActionPerformed(evt);
             }
         });
-        jPanel2.add(BtnModificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 530, 100, 30));
+        jPanel2.add(BtnModificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 560, 100, 30));
 
         BtnLimpiar.setText("Nuevo");
         BtnLimpiar.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -218,15 +218,15 @@ public class JPacientes extends javax.swing.JInternalFrame {
                 BtnLimpiarActionPerformed(evt);
             }
         });
-        jPanel2.add(BtnLimpiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 530, 100, 30));
+        jPanel2.add(BtnLimpiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 560, 100, 30));
         jPanel2.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 510, -1, -1));
-        jPanel2.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 510, 500, 20));
+        jPanel2.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 540, 500, 20));
 
         jSeparator5.setOrientation(javax.swing.SwingConstants.VERTICAL);
-        jPanel2.add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 510, 10, 70));
+        jPanel2.add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 540, 10, 70));
 
         jSeparator6.setOrientation(javax.swing.SwingConstants.VERTICAL);
-        jPanel2.add(jSeparator6, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 510, 10, 70));
+        jPanel2.add(jSeparator6, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 540, 10, 70));
 
         TXTPcedula.setText("V-");
         TXTPcedula.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "Nombre"), "Cédula"));
@@ -253,7 +253,7 @@ public class JPacientes extends javax.swing.JInternalFrame {
         });
         jPanel2.add(TXTPapellido, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 70, 200, 50));
 
-        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 500, 580));
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 500, 610));
 
         jScrollPane1.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -272,7 +272,7 @@ public class JPacientes extends javax.swing.JInternalFrame {
         });
         jScrollPane1.setViewportView(JTablePaciente);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 120, 730, 480));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 120, 730, 510));
 
         jPanel4.setBackground(new java.awt.Color(255, 255, 255));
         jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "Buscar por"));
@@ -942,7 +942,7 @@ Search(); acomodarceldas();
     private javax.swing.JButton BtnLimpiar;
     private javax.swing.JButton BtnModificar;
     private javax.swing.JLabel FechaAc2;
-    public com.toedter.calendar.JDateChooser FechaAdmin;
+    private com.toedter.calendar.JDateChooser FechaAdmin;
     private com.toedter.calendar.JDateChooser FechaNacimiento;
     private javax.swing.JRadioButton JRMasculino;
     private javax.swing.JRadioButton JRfemenino;

@@ -56,8 +56,6 @@ FechaAdmin.setVisible(false);
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jPanel3 = new javax.swing.JPanel();
-        FechaAdmin = new com.toedter.calendar.JDateChooser();
         jPanel2 = new javax.swing.JPanel();
         Txtrespuesta3 = new javax.swing.JTextField();
         JCpregunta1 = new javax.swing.JComboBox<>();
@@ -79,6 +77,8 @@ FechaAdmin.setVisible(false);
         JTableSeguridad = new javax.swing.JTable();
         jPanel4 = new javax.swing.JPanel();
         TxtBusuario = new javax.swing.JTextField();
+        jPanel3 = new javax.swing.JPanel();
+        FechaAdmin = new com.toedter.calendar.JDateChooser();
 
         setBorder(null);
         setTitle("seguridad");
@@ -86,18 +86,6 @@ FechaAdmin.setVisible(false);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jPanel3.setBackground(new java.awt.Color(0, 0, 51));
-        jPanel3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        FechaAdmin.setBackground(new java.awt.Color(255, 255, 255));
-        FechaAdmin.setToolTipText("");
-        FechaAdmin.setEnabled(false);
-        FechaAdmin.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jPanel3.add(FechaAdmin, new org.netbeans.lib.awtextra.AbsoluteConstraints(990, 20, 110, 30));
-
-        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 610, 1300, 70));
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "SEGURIDAD CONTRASEÑA"));
@@ -140,7 +128,7 @@ FechaAdmin.setVisible(false);
 
         TxtUsuario.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "Usuario"));
         jPanel2.add(TxtUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, 370, 50));
-        jPanel2.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 520, 410, 10));
+        jPanel2.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 560, 410, 10));
 
         BtnModificar.setText("Modificar");
         BtnModificar.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -151,7 +139,7 @@ FechaAdmin.setVisible(false);
                 BtnModificarActionPerformed(evt);
             }
         });
-        jPanel2.add(BtnModificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 540, 90, 30));
+        jPanel2.add(BtnModificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 570, 90, 30));
 
         jButton5.setText("Limpiar");
         jButton5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -161,15 +149,15 @@ FechaAdmin.setVisible(false);
                 jButton5ActionPerformed(evt);
             }
         });
-        jPanel2.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 540, 90, 30));
+        jPanel2.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 570, 90, 30));
 
         jSeparator6.setOrientation(javax.swing.SwingConstants.VERTICAL);
-        jPanel2.add(jSeparator6, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 520, 10, 60));
+        jPanel2.add(jSeparator6, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 560, 10, 50));
 
         jSeparator7.setOrientation(javax.swing.SwingConstants.VERTICAL);
-        jPanel2.add(jSeparator7, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 520, 10, 60));
+        jPanel2.add(jSeparator7, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 560, 10, 50));
 
-        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 410, 580));
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 410, 610));
 
         JTableSeguridad.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -186,7 +174,7 @@ FechaAdmin.setVisible(false);
         });
         jScrollPane1.setViewportView(JTableSeguridad);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 110, 820, 490));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 110, 820, 510));
 
         jPanel4.setBackground(new java.awt.Color(255, 255, 255));
         jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "Buscar usuario"));
@@ -201,6 +189,18 @@ FechaAdmin.setVisible(false);
         jPanel4.add(TxtBusuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 360, 50));
 
         jPanel1.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 20, 820, 80));
+
+        jPanel3.setBackground(new java.awt.Color(0, 0, 51));
+        jPanel3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        FechaAdmin.setBackground(new java.awt.Color(255, 255, 255));
+        FechaAdmin.setToolTipText("");
+        FechaAdmin.setEnabled(false);
+        FechaAdmin.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jPanel3.add(FechaAdmin, new org.netbeans.lib.awtextra.AbsoluteConstraints(1150, 20, 120, 30));
+
+        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 640, 1300, 40));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1300, 680));
 

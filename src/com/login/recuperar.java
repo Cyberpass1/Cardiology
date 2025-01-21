@@ -77,6 +77,7 @@ catch (Exception ex){
         title2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
         jPanel9 = new javax.swing.JPanel();
         TxtPregunta2 = new javax.swing.JTextField();
         Txtrespuesta2 = new javax.swing.JPasswordField();
@@ -92,7 +93,6 @@ catch (Exception ex){
         nuevaclave1 = new javax.swing.JPasswordField();
         nuevaclave = new javax.swing.JPasswordField();
         jLabel5 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(0, 51, 102));
@@ -182,6 +182,10 @@ catch (Exception ex){
         jLabel4.setMinimumSize(new java.awt.Dimension(380, 290));
         jPanel3.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 10, -1, -1));
 
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/imgDoctora.jpg"))); // NOI18N
+        jLabel7.setMinimumSize(new java.awt.Dimension(380, 290));
+        jPanel3.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 10, -1, -1));
+
         jPanel7.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 370, 580));
 
         jPanel9.setBackground(new java.awt.Color(255, 255, 255));
@@ -253,9 +257,6 @@ catch (Exception ex){
         jPanel9.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 70, 70));
 
         jPanel7.add(jPanel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 10, 410, 580));
-
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/LogoPag.png"))); // NOI18N
-        jPanel7.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 40, 150, 140));
 
         getContentPane().add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 810, 601));
 
@@ -775,9 +776,9 @@ catch (Exception ex){
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel7;

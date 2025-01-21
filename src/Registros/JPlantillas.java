@@ -48,7 +48,6 @@ public class JPlantillas extends javax.swing.JInternalFrame {
         jPanel1 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
         FechaAdmin = new com.toedter.calendar.JDateChooser();
-        jButton5 = new javax.swing.JButton();
 
         setBorder(null);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -64,29 +63,14 @@ public class JPlantillas extends javax.swing.JInternalFrame {
         FechaAdmin.setToolTipText("");
         FechaAdmin.setEnabled(false);
         FechaAdmin.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jPanel3.add(FechaAdmin, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 110, 30));
+        jPanel3.add(FechaAdmin, new org.netbeans.lib.awtextra.AbsoluteConstraints(1150, 20, 120, 30));
 
-        jButton5.setForeground(new java.awt.Color(255, 255, 255));
-        jButton5.setText("Actualizar");
-        jButton5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
-        jButton5.setContentAreaFilled(false);
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
-            }
-        });
-        jPanel3.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(1170, 20, 90, 30));
-
-        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 610, 1300, 70));
+        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 640, 1300, 40));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1300, 680));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-
-    }//GEN-LAST:event_jButton5ActionPerformed
 
     
 
@@ -108,7 +92,6 @@ public class JPlantillas extends javax.swing.JInternalFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public com.toedter.calendar.JDateChooser FechaAdmin;
-    private javax.swing.JButton jButton5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel3;
     // End of variables declaration//GEN-END:variables

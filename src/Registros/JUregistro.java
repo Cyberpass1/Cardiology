@@ -164,7 +164,7 @@ public class JUregistro extends javax.swing.JInternalFrame {
         jPanel5.add(jLabel98, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 10, 220, -1));
         jPanel5.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 410, 10));
 
-        jPanel2.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 20, 410, 520));
+        jPanel2.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 20, 410, 540));
 
         jPanel4.setBackground(new java.awt.Color(255, 255, 255));
         jPanel4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -347,11 +347,11 @@ public class JUregistro extends javax.swing.JInternalFrame {
         });
         jPanel4.add(TxtCMA, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 450, 160, 50));
 
-        jPanel2.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 780, 520));
-        jPanel2.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 550, 1300, 10));
+        jPanel2.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 780, 540));
+        jPanel2.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 570, 1300, 10));
 
         jSeparator7.setOrientation(javax.swing.SwingConstants.VERTICAL);
-        jPanel2.add(jSeparator7, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 550, 10, 60));
+        jPanel2.add(jSeparator7, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 570, 10, 60));
 
         BtnModificar.setText("MODIFICAR");
         BtnModificar.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
@@ -362,7 +362,7 @@ public class JUregistro extends javax.swing.JInternalFrame {
                 BtnModificarActionPerformed(evt);
             }
         });
-        jPanel2.add(BtnModificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 570, 130, 30));
+        jPanel2.add(BtnModificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 590, 130, 30));
 
         BtnAgregar.setText("AGREGAR");
         BtnAgregar.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
@@ -372,7 +372,7 @@ public class JUregistro extends javax.swing.JInternalFrame {
                 BtnAgregarActionPerformed(evt);
             }
         });
-        jPanel2.add(BtnAgregar, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 570, 130, 30));
+        jPanel2.add(BtnAgregar, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 590, 130, 30));
 
         jButton5.setText("Nuevo");
         jButton5.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
@@ -382,12 +382,12 @@ public class JUregistro extends javax.swing.JInternalFrame {
                 jButton5ActionPerformed(evt);
             }
         });
-        jPanel2.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(1050, 570, 130, 30));
+        jPanel2.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(1050, 590, 130, 30));
 
         jSeparator8.setOrientation(javax.swing.SwingConstants.VERTICAL);
-        jPanel2.add(jSeparator8, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 550, 10, 60));
+        jPanel2.add(jSeparator8, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 570, 10, 60));
 
-        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1300, 610));
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1300, 630));
 
         jPanel3.setBackground(new java.awt.Color(0, 0, 51));
         jPanel3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -397,9 +397,9 @@ public class JUregistro extends javax.swing.JInternalFrame {
         FechaAdmin.setToolTipText("");
         FechaAdmin.setEnabled(false);
         FechaAdmin.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jPanel3.add(FechaAdmin, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, 110, 30));
+        jPanel3.add(FechaAdmin, new org.netbeans.lib.awtextra.AbsoluteConstraints(1150, 20, 120, 30));
 
-        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 610, 1300, 70));
+        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 640, 1300, 40));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1300, 680));
 
